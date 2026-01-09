@@ -646,7 +646,7 @@
         document.getElementById('header-description').textContent = contest.description;
 
         const divisionBadge = document.getElementById('division-badge');
-        divisionBadge.textContent = division.charAt(0).toUpperCase() + division.slice(1);
+        divisionBadge.textContent = division === 'junior' ? 'Junior' : 'Senior / Intermediate';
         divisionBadge.className = 'division-badge ' + division;
 
         const container = document.getElementById('lessons-container');

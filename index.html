@@ -52,20 +52,16 @@
                 <!-- Division Selector -->
                 <div class="division-selector">
                     <button class="division-btn active" data-division="senior">
-                        <span class="material-icons">workspace_premium</span>
-                        Senior
-                    </button>
-                    <button class="division-btn" data-division="intermediate">
                         <span class="material-icons">school</span>
-                        Intermediate
+                        Senior / Intermediate
                     </button>
                     <button class="division-btn" data-division="junior">
                         <span class="material-icons">child_care</span>
                         Junior
                     </button>
                 </div>
-                <p class="division-note" id="division-note">Senior & Intermediate share the same topics. Senior problems
-                    are more challenging.</p>
+                <p class="division-note" id="division-note">Senior & Intermediate share the same topics and problems.
+                </p>
             </div>
         </div>
 
@@ -426,16 +422,9 @@
 
         const divisionData = {
             senior: {
-                note: 'Senior & Intermediate share the same topics. Senior problems are more challenging.',
-                contests: [
-                    { num: 1, topics: 'Computer Number Systems • Recursive Functions • What Does This Program Do?' },
-                    { num: 2, topics: 'Prefix/Infix/Postfix Notation • Bit-String Flicking • LISP' },
-                    { num: 3, topics: 'Boolean Algebra • Data Structures • FSAs and Regular Expressions' },
-                    { num: 4, topics: 'Graph Theory • Digital Electronics • Assembly Language' }
-                ]
-            },
-            intermediate: {
-                note: 'Senior & Intermediate share the same topics. Intermediate problems are less challenging.',
+                note: 'Senior & Intermediate share the same topics and problems.',
+                shortCounts: [36, 35, 34, 35],
+                progCount: 10,
                 contests: [
                     { num: 1, topics: 'Computer Number Systems • Recursive Functions • What Does This Program Do?' },
                     { num: 2, topics: 'Prefix/Infix/Postfix Notation • Bit-String Flicking • LISP' },
@@ -445,6 +434,8 @@
             },
             junior: {
                 note: 'Junior division focuses on program tracing with different data structures each contest.',
+                shortCounts: [36, 35, 34, 35],
+                progCount: 10,
                 contests: [
                     { num: 1, topics: 'Computer Number Systems • Recursive Functions • WDTPD: Branching' },
                     { num: 2, topics: 'Prefix/Infix/Postfix Notation • Bit-String Flicking • WDTPD: Looping' },
@@ -459,7 +450,7 @@
             const data = divisionData[currentDivision];
             document.getElementById('division-note').textContent = data.note;
 
-            track.innerHTML = data.contests.map(c => `
+            track.innerHTML = data.contests.map((c, idx) => `
                 <div class="contest-card-full" data-contest="${c.num}">
                     <div class="contest-card-header">
                         <div class="contest-number">0${c.num}</div>
@@ -488,8 +479,8 @@
                                 <div class="type-icon"><span class="material-icons">edit_note</span></div>
                                 <div class="type-info">
                                     <h3>Short Problems</h3>
-                                    <p>6 problems: 2 per topic</p>
-                                    <span class="problem-count">0 / 6 completed</span>
+                                    <p>${data.shortCounts[idx]} practice problems</p>
+                                    <span class="problem-count">0 / ${data.shortCounts[idx]} completed</span>
                                 </div>
                                 <span class="type-arrow">→</span>
                             </a>
@@ -498,7 +489,7 @@
                                 <div class="type-info">
                                     <h3>Programming Problems</h3>
                                     <p>Code solutions in Python, Java, or C++</p>
-                                    <span class="problem-count">0 / 5 completed</span>
+                                    <span class="problem-count">0 / ${data.progCount} completed</span>
                                 </div>
                                 <span class="type-arrow">→</span>
                             </a>
@@ -542,13 +533,16 @@
                 const userDoc = await getDoc(doc(db, 'users', user.uid));
                 if (userDoc.exists()) {
                     const progress = userDoc.data().progress;
+                    const data = divisionData[currentDivision];
                     // Update progress display for each contest
                     for (let i = 1; i <= 4; i++) {
                         const contestProgress = progress[`contest${i}`];
                         if (contestProgress) {
                             const shortCompleted = contestProgress.short?.length || 0;
                             const progCompleted = contestProgress.programming?.length || 0;
-                            const total = 15; // 10 short + 5 programming
+                            const shortTotal = data.shortCounts[i - 1];
+                            const progTotal = data.progCount;
+                            const total = shortTotal + progTotal;
                             const percent = Math.round(((shortCompleted + progCompleted) / total) * 100);
 
                             const progressEl = document.querySelector(`#contest${i}-progress .progress-percent`);
@@ -560,8 +554,8 @@
                             const card = document.querySelector(`[data-contest="${i}"]`);
                             if (card) {
                                 const counts = card.querySelectorAll('.problem-count');
-                                if (counts[1]) counts[1].textContent = `${shortCompleted} / 10 completed`;
-                                if (counts[2]) counts[2].textContent = `${progCompleted} / 5 completed`;
+                                if (counts[1]) counts[1].textContent = `${shortCompleted} / ${shortTotal} completed`;
+                                if (counts[2]) counts[2].textContent = `${progCompleted} / ${progTotal} completed`;
                             }
                         }
                     }
