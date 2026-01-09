@@ -101,8 +101,12 @@ function updateUIForSignedInUser(user) {
     const userName = document.getElementById('user-name');
     const ctaSection = document.getElementById('cta-section');
 
-    if (authNav) authNav.classList.add('hidden');
+    if (authNav) {
+        authNav.style.display = 'none';
+        authNav.classList.add('hidden');
+    }
     if (userNav) {
+        userNav.style.display = 'flex';
         userNav.classList.remove('hidden');
         if (userAvatar) userAvatar.src = user.photoURL || 'https://via.placeholder.com/32';
         if (userName) userName.textContent = user.displayName?.split(' ')[0] || 'User';
@@ -116,8 +120,14 @@ function updateUIForSignedOutUser() {
     const userNav = document.getElementById('user-nav');
     const ctaSection = document.getElementById('cta-section');
 
-    if (authNav) authNav.classList.remove('hidden');
-    if (userNav) userNav.classList.add('hidden');
+    if (authNav) {
+        authNav.style.display = 'flex';
+        authNav.classList.remove('hidden');
+    }
+    if (userNav) {
+        userNav.style.display = 'none';
+        userNav.classList.add('hidden');
+    }
     if (ctaSection) ctaSection.classList.remove('hidden');
 }
 
