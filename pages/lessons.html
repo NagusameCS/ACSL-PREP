@@ -772,7 +772,7 @@ Result: 11001₂</code></pre>
                     { id: 'tips', title: 'Tracing Tips' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">What Does This Program Do?</h2>
                     <p>WDTPD problems ask you to trace through code and determine what it outputs. Branching focuses on if/else statements.</p>
                     <div class="info-box">
@@ -820,7 +820,7 @@ else:
                     </ol>
                     <h2 id="practice">Practice Problems</h2>
                     <ol><li>Trace: if x % 2 == 0 when x = 7</li><li>What is printed when n = 15 and you check if n > 10 and n < 20?</li></ol>
-                \`
+                `
             },
             'wdtpd-looping': {
                 title: 'WDTPD: Looping',
@@ -832,7 +832,7 @@ else:
                     { id: 'accumulation', title: 'Accumulation' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Tracing Loops</h2>
                     <p>Loop problems require you to track variables through multiple iterations. The key is to build a trace table.</p>
                     <div class="info-box">
@@ -877,7 +877,7 @@ for i in range(1, 6):
 # product = 120 (factorial)</code></pre>
                     <h2 id="practice">Practice</h2>
                     <ol><li>What does range(0, 10, 2) produce?</li><li>How many times does "while x < 100: x = x * 2" run if x starts at 3?</li></ol>
-                \`
+                `
             },
             'wdtpd-arrays': {
                 title: 'WDTPD: Arrays',
@@ -889,7 +889,7 @@ for i in range(1, 6):
                     { id: '2d-arrays', title: '2D Arrays' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Array Tracing</h2>
                     <p>Arrays (lists) store multiple values. Tracing requires tracking the array state and index positions.</p>
                     <div class="info-box">
@@ -931,7 +931,7 @@ for col in range(3):
                     </div>
                     <h2 id="practice">Practice</h2>
                     <ol><li>What is arr[len(arr)-1] if arr = [5, 10, 15]?</li><li>After arr[1] = arr[0] + arr[2], what is arr if it started as [2, 0, 8]?</li></ol>
-                \`
+                `
             },
             'wdtpd-strings': {
                 title: 'WDTPD: Strings',
@@ -943,7 +943,7 @@ for col in range(3):
                     { id: 'building', title: 'Building Strings' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">String Tracing</h2>
                     <p>Strings are sequences of characters. Like arrays, they use zero-based indexing.</p>
                     <div class="info-box">
@@ -986,7 +986,7 @@ print(output)
                     </div>
                     <h2 id="practice">Practice</h2>
                     <ol><li>What is "python"[2:5]?</li><li>What does "abc" * 3 produce?</li></ol>
-                \`
+                `
             },
             'program-tracing': {
                 title: 'What Does This Program Do?',
@@ -999,7 +999,7 @@ print(output)
                     { id: 'functions', title: 'Function Calls' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">What Does This Program Do?</h2>
                     <p>WDTPD problems require you to manually execute code and determine the output. This is a core ACSL skill tested in every contest.</p>
                     <div class="info-box">
@@ -1059,7 +1059,7 @@ print(x + y)       # Output: 10</code></pre>
                         <li>What is the output when n=5? <code>for i in range(n, 0, -1): print(i, end="")</code></li>
                         <li>Trace: x=1; while x<20: x=x*2+1</li>
                     </ol>
-                \`
+                `
             },
             'notation': {
                 title: 'Expression Notation',
@@ -1073,7 +1073,7 @@ print(x + y)       # Output: 10</code></pre>
                     { id: 'evaluation', title: 'Evaluation' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Expression Notation</h2>
                     <p>There are three ways to write mathematical expressions based on operator position:</p>
                     <table>
@@ -1135,7 +1135,7 @@ Result: 16</code></pre>
                         <li>Evaluate: 6 2 / 3 + 4 *</li>
                         <li>Convert to infix: * + A B - C D</li>
                     </ol>
-                \`
+                `
             },
             'bit-string': {
                 title: 'Bit-String Flicking',
@@ -1147,7 +1147,7 @@ Result: 16</code></pre>
                     { id: 'solving', title: 'Solving Problems' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Bit-String Flicking</h2>
                     <p>Bit-string problems involve applying logical operations to binary strings bit by bit.</p>
                     <div class="info-box">
@@ -1195,7 +1195,7 @@ Answer: 0101</code></pre>
                         <li>What is RCIRC-3 11010101?</li>
                         <li>Solve: (LSHIFT-2 1111) OR (RSHIFT-1 1111)</li>
                     </ol>
-                \`
+                `
             },
             'lisp': {
                 title: 'LISP Programming',
@@ -1209,7 +1209,7 @@ Answer: 0101</code></pre>
                     { id: 'conditionals', title: 'Conditionals' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Introduction to LISP</h2>
                     <p>LISP (LISt Processing) is one of the oldest programming languages. Everything is either an atom or a list.</p>
                     <div class="info-box">
@@ -1261,7 +1261,7 @@ NIL or ()   ; empty list</code></pre>
                         <li>Evaluate: (CONS (CAR '(1 2)) (CDR '(3 4)))</li>
                         <li>What is (* (+ 2 3) (- 8 4))?</li>
                     </ol>
-                \`
+                `
             },
             'boolean-algebra': {
                 title: 'Boolean Algebra',
@@ -1274,7 +1274,7 @@ NIL or ()   ; empty list</code></pre>
                     { id: 'simplification', title: 'Simplification' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Boolean Algebra</h2>
                     <p>Boolean algebra deals with binary values (TRUE/FALSE or 1/0) and logical operations.</p>
                     <h2 id="operators">Boolean Operators</h2>
@@ -1319,7 +1319,7 @@ Simplify: (A + B)·(A + B')
                         <li>Apply De Morgan's: (X · Y · Z)'</li>
                         <li>Simplify: (A + B) · (A + C) · (B + C)</li>
                     </ol>
-                \`
+                `
             },
             'data-structures': {
                 title: 'Data Structures',
@@ -1333,7 +1333,7 @@ Simplify: (A + B)·(A + B')
                     { id: 'bst', title: 'Binary Search Trees' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Data Structures</h2>
                     <p>Data structures organize data for efficient access and modification.</p>
                     <h2 id="stacks">Stacks (LIFO)</h2>
@@ -1394,7 +1394,7 @@ Search for 40:
                         <li>Give inorder traversal of a BST with values 5,3,7,2,4,6,8</li>
                         <li>What's the maximum nodes in a binary tree of height 4?</li>
                     </ol>
-                \`
+                `
             },
             'fsa-regex': {
                 title: 'FSAs & Regular Expressions',
@@ -1407,7 +1407,7 @@ Search for 40:
                     { id: 'equivalence', title: 'FSA-Regex Equivalence' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Introduction</h2>
                     <p>FSAs and regex both describe patterns in strings. They are mathematically equivalent.</p>
                     <h2 id="fsa">Finite State Automata</h2>
@@ -1466,7 +1466,7 @@ Matches: strings with exactly two 0s</code></pre>
                         <li>Does the regex (a|b)*abb accept "aabb"?</li>
                         <li>How many states minimum for strings divisible by 3?</li>
                     </ol>
-                \`
+                `
             },
             'graph-theory': {
                 title: 'Graph Theory',
@@ -1479,7 +1479,7 @@ Matches: strings with exactly two 0s</code></pre>
                     { id: 'algorithms', title: 'Algorithms' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Graph Theory</h2>
                     <p>A graph G = (V, E) consists of vertices (nodes) and edges (connections).</p>
                     <h2 id="terminology">Key Terminology</h2>
@@ -1531,7 +1531,7 @@ Hamilton Circuit: Hamilton path returning to start</code></pre>
                         <li>Can a graph with degrees 3,3,3,3,2 have an Euler circuit?</li>
                         <li>How many edges in a complete graph K₅?</li>
                     </ol>
-                \`
+                `
             },
             'digital-electronics': {
                 title: 'Digital Electronics',
@@ -1544,7 +1544,7 @@ Hamilton Circuit: Hamilton path returning to start</code></pre>
                     { id: 'kmaps', title: 'Karnaugh Maps' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Digital Electronics</h2>
                     <p>Digital circuits use logic gates to process binary signals.</p>
                     <h2 id="gates">Logic Gates</h2>
@@ -1596,7 +1596,7 @@ Group the 1s: F = B + A (simplified)</code></pre>
                         <li>How many rows in a truth table with 4 inputs?</li>
                         <li>Simplify using K-map: F(A,B) = A'B + AB + AB'</li>
                     </ol>
-                \`
+                `
             },
             'assembly': {
                 title: 'Assembly Language',
@@ -1609,7 +1609,7 @@ Group the 1s: F = B + A (simplified)</code></pre>
                     { id: 'tracing', title: 'Tracing Programs' },
                     { id: 'practice', title: 'Practice' }
                 ],
-                content: \`
+                content: `
                     <h2 id="intro">Assembly Language</h2>
                     <p>Assembly is a low-level language with direct hardware access. ACSL uses a simplified model.</p>
                     <h2 id="registers">Registers</h2>
@@ -1667,7 +1667,7 @@ Final: Memory[100]=5, Memory[101]=8</code></pre>
                         <li>If Memory[200]=50, Memory[50]=7, what is LOAD @200?</li>
                         <li>Write code to compute Memory[100] + Memory[101] × 2</li>
                     </ol>
-                \`
+                `
             }
         };
 
@@ -1687,18 +1687,18 @@ Final: Memory[100]=5, Memory[101]=8</code></pre>
 
         function openLesson(lessonId) {
             const lesson = lessonContent[lessonId] || defaultContent;
-            
-            lessonSidebar.innerHTML = lesson.sections.map(s => 
-                `< a href="#${s.id}" class= "sidebar-link" > ${ s.title }</a> `
+
+            lessonSidebar.innerHTML = lesson.sections.map(s =>
+                `<a href="#${s.id}" class="sidebar-link">${s.title}</a>`
             ).join('');
-            
-            lessonArticle.innerHTML = `< h1 > ${ lesson.title }</h1 > <p style="color:var(--text-secondary);margin-bottom:2rem;">${lesson.subtitle}</p>` + lesson.content;
-            
+
+            lessonArticle.innerHTML = `<h1>${lesson.title}</h1><p style="color:var(--text-secondary);margin-bottom:2rem;">${lesson.subtitle}</p>` + lesson.content;
+
             lessonView.classList.add('active');
             document.body.style.overflow = 'hidden';
             lessonArticle.parentElement.scrollTop = 0;
             progressFill.style.width = '0%';
-            
+
             setupScrollSpy();
         }
 
@@ -1710,11 +1710,11 @@ Final: Memory[100]=5, Memory[101]=8</code></pre>
         function setupScrollSpy() {
             const main = lessonArticle.parentElement;
             const links = lessonSidebar.querySelectorAll('.sidebar-link');
-            
+
             main.addEventListener('scroll', () => {
                 const pct = (main.scrollTop / (main.scrollHeight - main.clientHeight)) * 100;
                 progressFill.style.width = Math.min(pct, 100) + '%';
-                
+
                 const headers = lessonArticle.querySelectorAll('h2[id]');
                 let activeId = '';
                 headers.forEach(h => {
@@ -1724,7 +1724,7 @@ Final: Memory[100]=5, Memory[101]=8</code></pre>
                     link.classList.toggle('active', link.getAttribute('href') === '#' + activeId);
                 });
             });
-            
+
             links.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -1732,13 +1732,13 @@ Final: Memory[100]=5, Memory[101]=8</code></pre>
                     if (target) target.scrollIntoView({ behavior: 'smooth' });
                 });
             });
-            
+
             if (links[0]) links[0].classList.add('active');
         }
 
         closeBtn.addEventListener('click', closeLesson);
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLesson(); });
-        
+
         document.addEventListener('click', (e) => {
             const card = e.target.closest('.lesson-card');
             if (card) openLesson(card.dataset.lesson);
