@@ -352,10 +352,7 @@ ol {
     align-items: center;
     justify-content: center;
     padding: calc(80px + var(--spacing-3xl)) var(--spacing-lg) var(--spacing-3xl);
-    background:
-        radial-gradient(ellipse at top right, rgba(239, 68, 68, 0.1) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom left, rgba(239, 68, 68, 0.05) 0%, transparent 50%),
-        var(--bg-primary);
+    background: var(--bg-primary);
 }
 
 .hero {
@@ -601,7 +598,7 @@ ol {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent), var(--primary-400));
+    background: var(--accent);
     opacity: 0;
     transition: opacity var(--transition-normal);
 }
@@ -652,9 +649,7 @@ ol {
 
 .cta {
     padding: var(--spacing-3xl) var(--spacing-lg);
-    background:
-        radial-gradient(ellipse at center, rgba(239, 68, 68, 0.15) 0%, transparent 70%),
-        var(--bg-secondary);
+    background: var(--bg-secondary);
     text-align: center;
 }
 
@@ -716,9 +711,7 @@ ol {
 
 .page-header {
     padding: var(--spacing-2xl) var(--spacing-lg);
-    background:
-        radial-gradient(ellipse at top, rgba(239, 68, 68, 0.1) 0%, transparent 50%),
-        var(--bg-secondary);
+    background: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -856,7 +849,7 @@ ol {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--primary-400));
+    background: var(--accent);
     border-radius: var(--radius-full);
     transition: width var(--transition-slow);
 }
@@ -1048,17 +1041,17 @@ ol {
 }
 
 .rank-1 {
-    background: linear-gradient(135deg, #ffd700, #ffb700);
+    background: #ffd700;
     color: #000;
 }
 
 .rank-2 {
-    background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+    background: #c0c0c0;
     color: #000;
 }
 
 .rank-3 {
-    background: linear-gradient(135deg, #cd7f32, #b87333);
+    background: #cd7f32;
     color: #fff;
 }
 
