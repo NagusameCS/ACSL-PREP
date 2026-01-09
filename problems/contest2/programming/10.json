@@ -1,0 +1,30 @@
+{
+    "id": 10,
+    "title": "Milk Measurement",
+    "difficulty": "Hard",
+    "statement": "# Milk Measurement\n\nFarmer John tracks the milk production of his three cows over time.\n\n## Problem Description\n\nFarmer John has exactly 3 cows: Bessie, Elsie, and Mildred. Initially, each cow produces 7 gallons of milk per day.\n\nOver time, the milk production changes. You are given N changes, where each change specifies a cow and the change in her daily milk production (which can be positive or negative).\n\nThe cows compete for the \"best milker\" title displayed on the barn wall. A cow earns a spot on the wall if she produces the most milk (ties are allowed). \n\nCount how many times the display on the barn wall needs to change. The initial state (all three cows tied) counts as the starting display.\n\n## Input Format\n\nThe first line contains N.\nThe next N lines each contain a day number, cow name, and change amount.\n\n## Output Format\n\nThe number of times the display changes.\n\n## Constraints\n\n- 1 ≤ N ≤ 100\n- Cow names are: Bessie, Elsie, Mildred\n- -100 ≤ change ≤ 100",
+    "examples": [
+        {
+            "input": "4\n7 Bessie +3\n14 Elsie -1\n21 Mildred +2\n28 Bessie -1",
+            "output": "3"
+        }
+    ],
+    "testCases": [
+        {
+            "input": "4\n7 Bessie +3\n14 Elsie -1\n21 Mildred +2\n28 Bessie -1",
+            "output": "3"
+        },
+        {
+            "input": "1\n1 Bessie +5",
+            "output": "1"
+        },
+        {
+            "input": "2\n1 Bessie +5\n2 Bessie -5",
+            "output": "2"
+        },
+        {
+            "input": "3\n1 Bessie +10\n2 Elsie +10\n3 Mildred +10",
+            "output": "2"
+        }
+    ]
+}

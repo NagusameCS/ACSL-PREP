@@ -1,0 +1,34 @@
+{
+    "id": 10,
+    "title": "Bucket Brigade",
+    "difficulty": "Hard",
+    "statement": "# Bucket Brigade\n\nA fire has broken out on the farm, and the cows need to form a bucket brigade!\n\n## Problem Description\n\nThe farm is represented as an N×N grid. There is a barn 'B' that is on fire, a lake 'L' with water, and a rock 'R' that blocks movement. All other cells are grass '.'.\n\nCows must form a bucket brigade from the lake to the barn. They can only pass buckets horizontally or vertically (not diagonally), and they cannot stand on the rock.\n\nFind the minimum number of cows needed for the bucket brigade. The cow at the lake fills buckets, and the cow at the barn empties them - but we need cows in between to pass the buckets.\n\n## Input Format\n\nThe first line contains N.\nThe next N lines contain the grid.\n\n## Output Format\n\nA single integer: the minimum number of cows needed (excluding the source and destination, so essentially the number of intermediate positions).\n\n## Constraints\n\n- 3 ≤ N ≤ 10\n- Exactly one 'B', one 'L', and one 'R'\n- A path always exists",
+    "examples": [
+        {
+            "input": "3\n.L.\n...\n.B.",
+            "output": "2"
+        },
+        {
+            "input": "5\nL....\n.R...\n.....\n...R.\n....B",
+            "output": "7"
+        }
+    ],
+    "testCases": [
+        {
+            "input": "3\n.L.\n...\n.B.",
+            "output": "2"
+        },
+        {
+            "input": "5\nL....\n.R...\n.....\n...R.\n....B",
+            "output": "7"
+        },
+        {
+            "input": "3\nL.B\nR..\n...",
+            "output": "1"
+        },
+        {
+            "input": "4\nL...\n.R..\n..R.\n...B",
+            "output": "5"
+        }
+    ]
+}

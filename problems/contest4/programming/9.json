@@ -1,0 +1,30 @@
+{
+    "id": 9,
+    "title": "Shell Game",
+    "difficulty": "Medium",
+    "statement": "# Shell Game\n\nBessie and Farmer John are playing a shell game.\n\n## Problem Description\n\nThere are 3 shells labeled 1, 2, and 3 in a row. FJ performs a sequence of swaps, where each swap exchanges the positions of two shells.\n\nAfter each swap, Bessie guesses which shell contains the hidden ball. She doesn't know where the ball starts, so she just guesses based on intuition.\n\nGiven the sequence of swaps and Bessie's guesses, determine the maximum number of correct guesses Bessie could have made if the ball started under the optimal shell.\n\n## Input Format\n\nThe first line contains N, the number of swaps.\nEach of the next N lines contains three integers: a, b (the two shells being swapped), and g (Bessie's guess after this swap).\n\n## Output Format\n\nA single integer: the maximum number of correct guesses.\n\n## Constraints\n\n- 1 ≤ N ≤ 100\n- 1 ≤ a, b, g ≤ 3\n- a ≠ b",
+    "examples": [
+        {
+            "input": "3\n1 2 1\n2 3 3\n1 3 1",
+            "output": "2"
+        }
+    ],
+    "testCases": [
+        {
+            "input": "3\n1 2 1\n2 3 3\n1 3 1",
+            "output": "2"
+        },
+        {
+            "input": "2\n1 2 2\n2 3 3",
+            "output": "2"
+        },
+        {
+            "input": "5\n1 2 1\n2 3 2\n1 3 3\n2 3 1\n1 2 2",
+            "output": "3"
+        },
+        {
+            "input": "1\n1 2 1",
+            "output": "1"
+        }
+    ]
+}

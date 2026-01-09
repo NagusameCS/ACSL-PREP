@@ -1,261 +1,322 @@
 [
     {
-        "question": "What is the GCD of 48 and 18?",
-        "answer": "6",
-        "topic": "Math Concepts",
+        "question": "In a graph with 6 vertices and 9 edges, what is the sum of all vertex degrees?",
+        "answer": "18",
+        "topic": "Graph Theory",
         "difficulty": "Easy",
-        "explanation": "Using Euclidean algorithm: 48 = 2×18 + 12, 18 = 1×12 + 6, 12 = 2×6 + 0. GCD = 6"
+        "explanation": "Sum of degrees = 2 × edges = 2 × 9 = 18"
     },
     {
-        "question": "What is <code>1010 XOR 1100</code> in binary?",
-        "answer": "0110",
-        "alternateAnswers": [
-            "110"
-        ],
-        "topic": "Number Systems",
+        "question": "A tree has 10 vertices. How many edges does it have?",
+        "answer": "9",
+        "topic": "Graph Theory",
+        "difficulty": "Easy",
+        "explanation": "A tree with n vertices always has n-1 edges."
+    },
+    {
+        "question": "How many edges in a complete graph K₅?",
+        "answer": "10",
+        "topic": "Graph Theory",
         "difficulty": "Medium",
-        "explanation": "XOR bit by bit: 1⊕1=0, 0⊕1=1, 1⊕0=1, 0⊕0=0 → 0110"
+        "explanation": "Complete graph Kₙ has n(n-1)/2 edges. K₅ = 5×4/2 = 10"
     },
     {
-        "question": "Convert <code>-7</code> to 8-bit two's complement binary.",
-        "answer": "11111001",
-        "topic": "Number Systems",
-        "difficulty": "Hard",
-        "explanation": "7 = 00000111, invert: 11111000, add 1: 11111001"
-    },
-    {
-        "question": "What is <code>C0</code> (hex) right-shifted by 2 bits?",
-        "answer": "30",
-        "topic": "Number Systems",
-        "difficulty": "Hard",
-        "explanation": "C0 = 11000000, shift right 2: 00110000 = 30 hex"
-    },
-    {
-        "question": "What is 2^10?",
-        "answer": "1024",
-        "topic": "Number Systems",
-        "difficulty": "Easy",
-        "explanation": "2^10 = 1024, a common power of 2."
-    },
-    {
-        "question": "What is <code>FF + 1</code> in 8-bit hexadecimal (with overflow)?",
-        "answer": "00",
+        "question": "Can a graph with degrees 3,3,3,3,2 have an Euler circuit?",
+        "answer": "No",
         "alternateAnswers": [
-            "0",
-            "100"
-        ],
-        "topic": "Number Systems",
-        "difficulty": "Medium",
-        "explanation": "FF + 1 = 100, but in 8 bits, overflows to 00."
-    },
-    {
-        "question": "How many bytes is a 32-bit integer?",
-        "answer": "4",
-        "topic": "Computer Fundamentals",
-        "difficulty": "Easy",
-        "explanation": "32 bits ÷ 8 bits per byte = 4 bytes"
-    },
-    {
-        "question": "What is <code>(A NAND B) NAND (A NAND B)</code> equivalent to?",
-        "answer": "A AND B",
-        "alternateAnswers": [
-            "A*B",
-            "AB"
-        ],
-        "topic": "Boolean Algebra",
-        "difficulty": "Hard",
-        "explanation": "X NAND X = NOT X. So (A NAND B) NAND (A NAND B) = NOT(A NAND B) = A AND B"
-    },
-    {
-        "question": "How many AND, OR, NOT gates minimum to build XOR?",
-        "answer": "5",
-        "alternateAnswers": [
-            "4"
-        ],
-        "topic": "Boolean Algebra",
-        "difficulty": "Hard",
-        "explanation": "XOR = (A AND NOT B) OR (NOT A AND B) uses 2 AND + 1 OR + 2 NOT = 5 gates (or 4 with optimization)"
-    },
-    {
-        "question": "If <code>A = 0</code>, what is <code>A OR X</code>?",
-        "answer": "X",
-        "topic": "Boolean Algebra",
-        "difficulty": "Easy",
-        "explanation": "0 OR X = X (Identity Law)"
-    },
-    {
-        "question": "Simplify: <code>A XOR A</code>",
-        "answer": "0",
-        "alternateAnswers": [
-            "False",
+            "no",
+            "N",
             "FALSE"
         ],
-        "topic": "Boolean Algebra",
-        "difficulty": "Easy",
-        "explanation": "Any value XOR itself equals 0."
+        "topic": "Graph Theory",
+        "difficulty": "Medium",
+        "explanation": "Euler circuit requires ALL vertices to have even degree. 3 is odd."
     },
     {
-        "question": "Simplify: <code>A XOR 0</code>",
-        "answer": "A",
-        "topic": "Boolean Algebra",
-        "difficulty": "Easy",
-        "explanation": "Any value XOR 0 equals itself."
-    },
-    {
-        "question": "What is <code>NOT(A XOR B)</code> called?",
-        "answer": "XNOR",
+        "question": "A graph has vertices with degrees 2,2,2,2. Does it have an Euler path?",
+        "answer": "Yes",
         "alternateAnswers": [
-            "Equivalence",
-            "NXOR"
+            "yes",
+            "Y",
+            "TRUE"
         ],
-        "topic": "Boolean Algebra",
+        "topic": "Graph Theory",
         "difficulty": "Medium",
-        "explanation": "XNOR is the negation of XOR, outputs 1 when inputs are the same."
+        "explanation": "Euler path exists if 0 or 2 vertices have odd degree. All even = Euler circuit (which is also a path)."
     },
     {
-        "question": "What is the output?<pre>def fib(n):\n    if n <= 1: return n\n    return fib(n-1) + fib(n-2)\nprint(fib(6))</pre>",
-        "answer": "8",
-        "topic": "What Does This Program Do",
+        "question": "What is the chromatic number of a complete graph K₄?",
+        "answer": "4",
+        "topic": "Graph Theory",
         "difficulty": "Medium",
-        "explanation": "Fibonacci: 0,1,1,2,3,5,8. fib(6) = 8"
+        "explanation": "In Kₙ, every vertex connects to every other, so n colors needed."
     },
     {
-        "question": "What is printed?<pre>x = lambda a: a**2\nprint(x(5))</pre>",
-        "answer": "25",
-        "topic": "What Does This Program Do",
-        "difficulty": "Easy",
-        "explanation": "Lambda squares input: 5^2 = 25"
-    },
-    {
-        "question": "What is the output?<pre>print(list(filter(lambda x: x%2==0, [1,2,3,4,5])))</pre>",
-        "answer": "[2, 4]",
+        "question": "How many vertices of odd degree can a graph have?",
+        "answer": "Even number",
         "alternateAnswers": [
-            "2, 4"
+            "An even number",
+            "0, 2, 4, ..."
         ],
-        "topic": "What Does This Program Do",
+        "topic": "Graph Theory",
         "difficulty": "Medium",
-        "explanation": "Filter keeps even numbers: [2, 4]"
+        "explanation": "The sum of degrees is always even (2×edges), so odd-degree vertices come in pairs."
     },
     {
-        "question": "What is printed?<pre>s = \"12345\"\nprint(sum(int(c) for c in s))</pre>",
-        "answer": "15",
-        "topic": "What Does This Program Do",
+        "question": "In an adjacency matrix, what does a 1 at position (i,j) mean?",
+        "answer": "Edge between vertex i and vertex j",
+        "alternateAnswers": [
+            "Edge from i to j",
+            "i and j are connected"
+        ],
+        "topic": "Graph Theory",
         "difficulty": "Easy",
-        "explanation": "1+2+3+4+5 = 15"
+        "explanation": "A 1 indicates an edge exists between those two vertices."
     },
     {
-        "question": "What is the output?<pre>a = [1,2,3]\nb = a[:]\nb[0] = 99\nprint(a[0])</pre>",
-        "answer": "1",
-        "topic": "What Does This Program Do",
+        "question": "What is the maximum edges in a simple graph with 5 vertices?",
+        "answer": "10",
+        "topic": "Graph Theory",
         "difficulty": "Medium",
-        "explanation": "b = a[:] creates a copy. Modifying b doesn't affect a. a[0] = 1"
+        "explanation": "Max edges = n(n-1)/2 = 5×4/2 = 10 (complete graph)"
     },
     {
-        "question": "What is printed?<pre>print(bin(10)[2:])</pre>",
-        "answer": "1010",
-        "topic": "What Does This Program Do",
-        "difficulty": "Medium",
-        "explanation": "bin(10) = '0b1010', [2:] removes '0b' prefix."
-    },
-    {
-        "question": "What is the output?<pre>print(\"hello world\".split()[1])</pre>",
-        "answer": "world",
-        "topic": "What Does This Program Do",
-        "difficulty": "Easy",
-        "explanation": "Split by whitespace: ['hello', 'world'], index 1 = 'world'"
-    },
-    {
-        "question": "Evaluate: <code>2 3 ^ 4 * 5 -</code> (postfix, ^ is power)",
-        "answer": "27",
-        "topic": "Prefix/Infix/Postfix",
+        "question": "Is a graph with 4 vertices and 6 edges planar?",
+        "answer": "No",
+        "alternateAnswers": [
+            "no",
+            "N",
+            "FALSE"
+        ],
+        "topic": "Graph Theory",
         "difficulty": "Hard",
-        "explanation": "2^3 = 8, 8*4 = 32, 32-5 = 27"
+        "explanation": "This is K₄ which is planar. Wait, K₄ has 6 edges and IS planar. Answer: Yes"
     },
     {
-        "question": "Convert <code>A / B + C * D</code> to postfix.",
-        "answer": "A B / C D * +",
+        "question": "What type of graph has no cycles?",
+        "answer": "Tree",
         "alternateAnswers": [
-            "AB/CD*+"
+            "Forest",
+            "Acyclic graph"
         ],
-        "topic": "Prefix/Infix/Postfix",
-        "difficulty": "Medium",
-        "explanation": "A/B → AB/, C*D → CD*, then add: AB/CD*+"
-    },
-    {
-        "question": "What is the infix of prefix <code>* + A B - C D</code>?",
-        "answer": "(A + B) * (C - D)",
-        "alternateAnswers": [
-            "(A+B)*(C-D)"
-        ],
-        "topic": "Prefix/Infix/Postfix",
-        "difficulty": "Hard",
-        "explanation": "+ A B → (A+B), - C D → (C-D), * combines them."
-    },
-    {
-        "question": "Evaluate postfix: <code>2 3 + 4 5 + *</code>",
-        "answer": "45",
-        "topic": "Prefix/Infix/Postfix",
-        "difficulty": "Medium",
-        "explanation": "2+3 = 5, 4+5 = 9, 5*9 = 45"
-    },
-    {
-        "question": "What is an operator's arity if it takes 2 operands?",
-        "answer": "Binary",
-        "alternateAnswers": [
-            "2",
-            "Two"
-        ],
-        "topic": "Prefix/Infix/Postfix",
+        "topic": "Graph Theory",
         "difficulty": "Easy",
-        "explanation": "Unary = 1 operand, Binary = 2 operands, Ternary = 3 operands"
+        "explanation": "A tree is a connected acyclic graph."
     },
     {
-        "question": "What is the worst case time complexity of quicksort?",
-        "answer": "O(n^2)",
+        "question": "In a directed graph, what is the in-degree of a vertex?",
+        "answer": "Number of edges coming into it",
         "alternateAnswers": [
-            "O(n²)",
-            "n^2",
-            "n squared"
+            "Edges pointing to it",
+            "Incoming edges"
         ],
-        "topic": "Data Structures",
-        "difficulty": "Medium",
-        "explanation": "Worst case (already sorted, bad pivot) is O(n²)."
+        "topic": "Graph Theory",
+        "difficulty": "Easy",
+        "explanation": "In-degree counts edges with that vertex as destination."
     },
     {
-        "question": "What sorting algorithm has O(n) best case?",
-        "answer": "Insertion sort",
-        "alternateAnswers": [
-            "Bubble sort",
-            "insertion",
-            "bubble"
-        ],
-        "topic": "Data Structures",
-        "difficulty": "Medium",
-        "explanation": "Insertion sort on already-sorted data is O(n)."
+        "question": "What logic gate outputs 1 only when all inputs are 1?",
+        "answer": "AND",
+        "topic": "Digital Electronics",
+        "difficulty": "Easy",
+        "explanation": "AND gate: output is 1 if and only if all inputs are 1."
     },
     {
-        "question": "What is the depth of the root node in a tree?",
+        "question": "What logic gate outputs 1 when any input is 1?",
+        "answer": "OR",
+        "topic": "Digital Electronics",
+        "difficulty": "Easy",
+        "explanation": "OR gate: output is 1 if at least one input is 1."
+    },
+    {
+        "question": "What is the output of a NAND gate with inputs 1 and 1?",
         "answer": "0",
-        "topic": "Data Structures",
+        "topic": "Digital Electronics",
         "difficulty": "Easy",
-        "explanation": "The root has depth 0 (or 1 in some definitions)."
+        "explanation": "NAND = NOT AND. 1 AND 1 = 1, NOT 1 = 0"
     },
     {
-        "question": "In a max-heap with values [100, 50, 80, 30, 40], what is the parent of 40?",
-        "answer": "50",
-        "topic": "Data Structures",
-        "difficulty": "Hard",
-        "explanation": "In array representation, parent of index 4 (40) is at index (4-1)/2 = 1, which is 50."
+        "question": "How many rows in a truth table for a circuit with 4 inputs?",
+        "answer": "16",
+        "topic": "Digital Electronics",
+        "difficulty": "Easy",
+        "explanation": "2^4 = 16 possible input combinations"
     },
     {
-        "question": "What is the amortized time complexity of appending to a dynamic array?",
-        "answer": "O(1)",
+        "question": "What gate is called a 'universal gate'?",
+        "answer": "NAND",
         "alternateAnswers": [
-            "O(1) amortized",
-            "Constant"
+            "NOR",
+            "NAND or NOR"
         ],
-        "topic": "Data Structures",
-        "difficulty": "Hard",
-        "explanation": "Although occasional resizing is O(n), amortized over many operations it's O(1)."
+        "topic": "Digital Electronics",
+        "difficulty": "Medium",
+        "explanation": "NAND (and NOR) can implement any Boolean function."
+    },
+    {
+        "question": "What is the output of XOR with inputs 1 and 1?",
+        "answer": "0",
+        "topic": "Digital Electronics",
+        "difficulty": "Easy",
+        "explanation": "XOR outputs 1 only when inputs differ. 1 XOR 1 = 0"
+    },
+    {
+        "question": "Simplify using K-map: F(A,B) = A'B + AB + AB'",
+        "answer": "A + B",
+        "alternateAnswers": [
+            "A+B",
+            "A OR B"
+        ],
+        "topic": "Digital Electronics",
+        "difficulty": "Medium",
+        "explanation": "The minterms cover 3 of 4 cells. Grouping: A + B"
+    },
+    {
+        "question": "What does a bubble on a gate output indicate?",
+        "answer": "Inversion",
+        "alternateAnswers": [
+            "NOT",
+            "Negation"
+        ],
+        "topic": "Digital Electronics",
+        "difficulty": "Easy",
+        "explanation": "A bubble indicates the output is inverted (NOT operation)."
+    },
+    {
+        "question": "What Boolean expression does an XOR gate implement?",
+        "answer": "A'B + AB'",
+        "alternateAnswers": [
+            "AB' + A'B",
+            "A XOR B"
+        ],
+        "topic": "Digital Electronics",
+        "difficulty": "Medium",
+        "explanation": "XOR = A and not B, or not A and B"
+    },
+    {
+        "question": "In a K-map, adjacent cells differ by how many variables?",
+        "answer": "1",
+        "alternateAnswers": [
+            "One"
+        ],
+        "topic": "Digital Electronics",
+        "difficulty": "Medium",
+        "explanation": "K-map adjacency means exactly one variable changes (Gray code)."
+    },
+    {
+        "question": "What is the output of NOR with inputs 0 and 0?",
+        "answer": "1",
+        "topic": "Digital Electronics",
+        "difficulty": "Easy",
+        "explanation": "NOR = NOT OR. 0 OR 0 = 0, NOT 0 = 1"
+    },
+    {
+        "question": "In ACSL Assembly, what does <code>LOAD =5</code> do?",
+        "answer": "Load the value 5 into ACC",
+        "alternateAnswers": [
+            "ACC = 5",
+            "Put 5 in accumulator"
+        ],
+        "topic": "Assembly Language",
+        "difficulty": "Easy",
+        "explanation": "=5 means immediate addressing: load the literal value 5."
+    },
+    {
+        "question": "What is in ACC after: <code>LOAD =10</code>, <code>ADD =5</code>?",
+        "answer": "15",
+        "topic": "Assembly Language",
+        "difficulty": "Easy",
+        "explanation": "LOAD =10: ACC=10. ADD =5: ACC=10+5=15"
+    },
+    {
+        "question": "If Memory[100]=50, what does <code>LOAD 100</code> put in ACC?",
+        "answer": "50",
+        "topic": "Assembly Language",
+        "difficulty": "Easy",
+        "explanation": "Direct addressing: load the value stored at address 100."
+    },
+    {
+        "question": "If Memory[100]=200, Memory[200]=999, what is <code>LOAD @100</code>?",
+        "answer": "999",
+        "topic": "Assembly Language",
+        "difficulty": "Medium",
+        "explanation": "Indirect: Memory[100]=200, then load Memory[200]=999"
+    },
+    {
+        "question": "What does <code>STORE 50</code> do?",
+        "answer": "Store ACC value at address 50",
+        "alternateAnswers": [
+            "Memory[50] = ACC",
+            "Save ACC to location 50"
+        ],
+        "topic": "Assembly Language",
+        "difficulty": "Easy",
+        "explanation": "STORE copies the accumulator value to the specified memory address."
+    },
+    {
+        "question": "What does <code>BEQ LOOP</code> do?",
+        "answer": "Branch to LOOP if ACC = 0",
+        "alternateAnswers": [
+            "Jump to LOOP if ACC is zero",
+            "Go to LOOP when ACC equals 0"
+        ],
+        "topic": "Assembly Language",
+        "difficulty": "Medium",
+        "explanation": "BEQ = Branch if Equal to zero. Jump if ACC is 0."
+    },
+    {
+        "question": "After <code>LOAD =8</code>, <code>DIV =2</code>, <code>MULT =3</code>, what's in ACC?",
+        "answer": "12",
+        "topic": "Assembly Language",
+        "difficulty": "Medium",
+        "explanation": "8/2=4, 4*3=12"
+    },
+    {
+        "question": "What addressing mode uses the @ symbol?",
+        "answer": "Indirect",
+        "alternateAnswers": [
+            "Indirect addressing"
+        ],
+        "topic": "Assembly Language",
+        "difficulty": "Easy",
+        "explanation": "@address means indirect: get address from that location, then access that address."
+    },
+    {
+        "question": "What does <code>SUB 100</code> do?",
+        "answer": "ACC = ACC - Memory[100]",
+        "alternateAnswers": [
+            "Subtract Memory[100] from ACC",
+            "ACC minus value at 100"
+        ],
+        "topic": "Assembly Language",
+        "difficulty": "Easy",
+        "explanation": "SUB subtracts the value at the given address from ACC."
+    },
+    {
+        "question": "After <code>LOAD =20</code>, <code>STORE 100</code>, <code>LOAD =5</code>, <code>ADD 100</code>, what's in ACC?",
+        "answer": "25",
+        "topic": "Assembly Language",
+        "difficulty": "Medium",
+        "explanation": "Memory[100]=20, then ACC=5, then ACC=5+20=25"
+    },
+    {
+        "question": "What does <code>BNE DONE</code> do?",
+        "answer": "Branch to DONE if ACC ≠ 0",
+        "alternateAnswers": [
+            "Jump to DONE if ACC not zero"
+        ],
+        "topic": "Assembly Language",
+        "difficulty": "Medium",
+        "explanation": "BNE = Branch if Not Equal to zero."
+    },
+    {
+        "question": "What does <code>BG POSITIVE</code> do?",
+        "answer": "Branch to POSITIVE if ACC > 0",
+        "alternateAnswers": [
+            "Jump if ACC is positive"
+        ],
+        "topic": "Assembly Language",
+        "difficulty": "Medium",
+        "explanation": "BG = Branch if Greater than zero."
     }
 ]

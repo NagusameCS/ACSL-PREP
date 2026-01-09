@@ -1,259 +1,319 @@
 [
     {
-        "question": "How many bits are in a nibble?",
-        "answer": "4",
-        "topic": "Computer Fundamentals",
+        "question": "Simplify the Boolean expression: <code>A AND (A OR B)</code>",
+        "answer": "A",
+        "topic": "Boolean Algebra",
         "difficulty": "Easy",
-        "explanation": "A nibble is 4 bits, half of a byte (8 bits)."
+        "explanation": "By the Absorption Law: A AND (A OR B) = A"
     },
     {
-        "question": "What is <code>AB</code> (hex) × <code>2</code> (hex) in hexadecimal?",
-        "answer": "156",
-        "topic": "Number Systems",
-        "difficulty": "Hard",
-        "explanation": "AB = 171, × 2 = 342 = 156 in hex"
-    },
-    {
-        "question": "Convert <code>777</code> (octal) to decimal.",
-        "answer": "511",
-        "topic": "Number Systems",
-        "difficulty": "Medium",
-        "explanation": "7×64 + 7×8 + 7×1 = 448 + 56 + 7 = 511"
-    },
-    {
-        "question": "What is the largest 8-bit unsigned integer?",
-        "answer": "255",
-        "topic": "Number Systems",
-        "difficulty": "Easy",
-        "explanation": "2^8 - 1 = 256 - 1 = 255"
-    },
-    {
-        "question": "What is <code>10</code> (hex) in decimal?",
-        "answer": "16",
-        "topic": "Number Systems",
-        "difficulty": "Easy",
-        "explanation": "10 in hex = 1×16 + 0 = 16"
-    },
-    {
-        "question": "Compute <code>11.1</code> (binary) in decimal.",
-        "answer": "3.5",
-        "topic": "Number Systems",
-        "difficulty": "Hard",
-        "explanation": "11.1 = 2 + 1 + 0.5 = 3.5"
-    },
-    {
-        "question": "What is the range of a signed 8-bit integer?",
-        "answer": "-128 to 127",
+        "question": "Evaluate: <code>NOT (1 AND 0) OR 1</code>",
+        "answer": "1",
         "alternateAnswers": [
-            "-128 to +127",
-            "-128,127"
+            "True",
+            "TRUE"
         ],
-        "topic": "Number Systems",
-        "difficulty": "Medium",
-        "explanation": "-2^7 to 2^7 - 1 = -128 to 127"
+        "topic": "Boolean Algebra",
+        "difficulty": "Easy",
+        "explanation": "1 AND 0 = 0, NOT 0 = 1, 1 OR 1 = 1"
     },
     {
-        "question": "Simplify: <code>(A AND B) OR (A AND NOT B)</code>",
+        "question": "Simplify: <code>NOT(A AND B)</code> using De Morgan's Law.",
+        "answer": "NOT A OR NOT B",
+        "alternateAnswers": [
+            "A' + B'",
+            "(NOT A) OR (NOT B)"
+        ],
+        "topic": "Boolean Algebra",
+        "difficulty": "Medium",
+        "explanation": "De Morgan's Law: NOT(A AND B) = (NOT A) OR (NOT B)"
+    },
+    {
+        "question": "Simplify: <code>A OR (A AND B)</code>",
+        "answer": "A",
+        "topic": "Boolean Algebra",
+        "difficulty": "Easy",
+        "explanation": "Absorption Law: A OR (A AND B) = A"
+    },
+    {
+        "question": "If A=1, B=0, C=1, evaluate: <code>(A AND B) OR (NOT B AND C)</code>",
+        "answer": "1",
+        "alternateAnswers": [
+            "True",
+            "TRUE"
+        ],
+        "topic": "Boolean Algebra",
+        "difficulty": "Medium",
+        "explanation": "(1 AND 0) OR (NOT 0 AND 1) = 0 OR (1 AND 1) = 0 OR 1 = 1"
+    },
+    {
+        "question": "Simplify: <code>A·B + A·B'</code>",
         "answer": "A",
         "topic": "Boolean Algebra",
         "difficulty": "Medium",
-        "explanation": "Factor out A: A AND (B OR NOT B) = A AND 1 = A"
+        "explanation": "Factor: A(B + B') = A(1) = A"
     },
     {
-        "question": "What gate outputs 1 only when all inputs are 0?",
-        "answer": "NOR",
+        "question": "What is the dual of <code>A + B·C</code>?",
+        "answer": "A · (B + C)",
+        "alternateAnswers": [
+            "A(B+C)",
+            "A · B + A · C"
+        ],
+        "topic": "Boolean Algebra",
+        "difficulty": "Hard",
+        "explanation": "Dual: swap AND↔OR, swap 0↔1. A + B·C → A · (B + C)"
+    },
+    {
+        "question": "How many rows in a truth table for 3 variables?",
+        "answer": "8",
+        "topic": "Boolean Algebra",
+        "difficulty": "Easy",
+        "explanation": "2^3 = 8 rows for all combinations of 3 binary variables"
+    },
+    {
+        "question": "Simplify: <code>(A + B)(A + B')</code>",
+        "answer": "A",
         "topic": "Boolean Algebra",
         "difficulty": "Medium",
-        "explanation": "NOR = NOT OR. All 0s → OR gives 0 → NOT gives 1."
+        "explanation": "Using distribution: A + BB' = A + 0 = A"
     },
     {
-        "question": "Write the Boolean expression: output is 1 when inputs A and B are both 1.",
-        "answer": "A AND B",
+        "question": "Apply De Morgan's: <code>NOT(X OR Y OR Z)</code>",
+        "answer": "NOT X AND NOT Y AND NOT Z",
         "alternateAnswers": [
-            "A * B",
+            "X' · Y' · Z'",
+            "X'Y'Z'"
+        ],
+        "topic": "Boolean Algebra",
+        "difficulty": "Medium",
+        "explanation": "NOT of OR = AND of NOTs: X' AND Y' AND Z'"
+    },
+    {
+        "question": "Simplify: <code>A·B + A·B·C</code>",
+        "answer": "A·B",
+        "alternateAnswers": [
             "AB"
         ],
         "topic": "Boolean Algebra",
-        "difficulty": "Easy",
-        "explanation": "AND gate: output 1 only when both inputs are 1."
+        "difficulty": "Medium",
+        "explanation": "Factor: A·B(1 + C) = A·B(1) = A·B"
     },
     {
-        "question": "How many rows are in a truth table with 4 input variables?",
-        "answer": "16",
-        "topic": "Boolean Algebra",
-        "difficulty": "Easy",
-        "explanation": "2^4 = 16 rows for all combinations."
-    },
-    {
-        "question": "Simplify: <code>NOT(A OR NOT A)</code>",
-        "answer": "0",
+        "question": "What Boolean function outputs 1 only when inputs differ?",
+        "answer": "XOR",
         "alternateAnswers": [
-            "False",
-            "FALSE"
+            "Exclusive OR",
+            "A XOR B"
         ],
         "topic": "Boolean Algebra",
         "difficulty": "Easy",
-        "explanation": "A OR NOT A = 1, NOT 1 = 0"
+        "explanation": "XOR (exclusive or) outputs 1 when inputs are different."
     },
     {
-        "question": "What universal gate can implement any Boolean function?",
-        "answer": "NAND",
-        "alternateAnswers": [
-            "NOR"
-        ],
-        "topic": "Boolean Algebra",
-        "difficulty": "Medium",
-        "explanation": "NAND and NOR are both universal gates."
-    },
-    {
-        "question": "What is the output?<pre>lst = [[1,2],[3,4]]\nprint(lst[1][0])</pre>",
-        "answer": "3",
-        "topic": "What Does This Program Do",
-        "difficulty": "Easy",
-        "explanation": "lst[1] = [3,4], [3,4][0] = 3"
-    },
-    {
-        "question": "What is printed?<pre>def g(a, b=2):\n    return a * b\nprint(g(3))</pre>",
-        "answer": "6",
-        "topic": "What Does This Program Do",
-        "difficulty": "Easy",
-        "explanation": "b defaults to 2, so 3 * 2 = 6"
-    },
-    {
-        "question": "What is the output?<pre>x = [1, 2, 3]\ny = x\ny.append(4)\nprint(len(x))</pre>",
-        "answer": "4",
-        "topic": "What Does This Program Do",
-        "difficulty": "Medium",
-        "explanation": "y is a reference to x, so appending to y also modifies x. len(x) = 4."
-    },
-    {
-        "question": "What is printed?<pre>print(\"abc\" * 2)</pre>",
-        "answer": "abcabc",
-        "topic": "What Does This Program Do",
-        "difficulty": "Easy",
-        "explanation": "String repetition: \"abc\" * 2 = \"abcabc\""
-    },
-    {
-        "question": "What is the output?<pre>for i in range(5, 0, -2):\n    print(i, end=\" \")</pre>",
-        "answer": "5 3 1",
-        "alternateAnswers": [
-            "5 3 1 "
-        ],
-        "topic": "What Does This Program Do",
-        "difficulty": "Medium",
-        "explanation": "Range from 5 down to (but not including) 0, step -2: 5, 3, 1"
-    },
-    {
-        "question": "What does this return?<pre>def h(s):\n    return s == s[::-1]\nprint(h(\"racecar\"))</pre>",
-        "answer": "True",
-        "alternateAnswers": [
-            "true",
-            "TRUE"
-        ],
-        "topic": "What Does This Program Do",
-        "difficulty": "Medium",
-        "explanation": "Checks if string is a palindrome. 'racecar' reversed is 'racecar'. True."
-    },
-    {
-        "question": "What is the output?<pre>a = {1, 2, 3}\nb = {2, 3, 4}\nprint(len(a & b))</pre>",
-        "answer": "2",
-        "topic": "What Does This Program Do",
-        "difficulty": "Medium",
-        "explanation": "& is set intersection. {2, 3} has length 2."
-    },
-    {
-        "question": "Evaluate postfix: <code>3 4 * 5 6 * +</code>",
-        "answer": "42",
-        "topic": "Prefix/Infix/Postfix",
-        "difficulty": "Medium",
-        "explanation": "3*4 = 12, 5*6 = 30, 12+30 = 42"
-    },
-    {
-        "question": "Convert postfix <code>A B + C *</code> to infix.",
-        "answer": "(A + B) * C",
-        "alternateAnswers": [
-            "(A+B)*C"
-        ],
-        "topic": "Prefix/Infix/Postfix",
-        "difficulty": "Medium",
-        "explanation": "A B + → (A+B), then (A+B) C * → (A+B)*C"
-    },
-    {
-        "question": "Evaluate prefix: <code>+ - 5 3 * 2 4</code>",
-        "answer": "10",
-        "topic": "Prefix/Infix/Postfix",
-        "difficulty": "Medium",
-        "explanation": "- 5 3 = 2, * 2 4 = 8, + 2 8 = 10"
-    },
-    {
-        "question": "What data structure is used to evaluate postfix expressions?",
+        "question": "What data structure uses LIFO (Last In, First Out)?",
         "answer": "Stack",
-        "topic": "Prefix/Infix/Postfix",
-        "difficulty": "Easy",
-        "explanation": "Stacks are used to evaluate postfix by pushing operands and popping for operators."
-    },
-    {
-        "question": "Convert infix <code>(A + B) * (C - D)</code> to postfix.",
-        "answer": "A B + C D - *",
-        "alternateAnswers": [
-            "AB+CD-*"
-        ],
-        "topic": "Prefix/Infix/Postfix",
-        "difficulty": "Hard",
-        "explanation": "A+B → AB+, C-D → CD-, multiply → AB+CD-*"
-    },
-    {
-        "question": "What is the height of a tree with only a root node?",
-        "answer": "0",
-        "alternateAnswers": [
-            "1"
-        ],
         "topic": "Data Structures",
         "difficulty": "Easy",
-        "explanation": "Height is edges to deepest leaf. Root only = 0 edges (or 1 level depending on definition)."
+        "explanation": "A stack follows LIFO - the last element added is the first one removed."
     },
     {
-        "question": "What is a complete binary tree?",
-        "answer": "All levels full except possibly the last, filled left to right",
-        "alternateAnswers": [
-            "Complete",
-            "All levels filled left to right"
-        ],
+        "question": "What data structure uses FIFO (First In, First Out)?",
+        "answer": "Queue",
+        "topic": "Data Structures",
+        "difficulty": "Easy",
+        "explanation": "A queue follows FIFO - the first element added is the first one removed."
+    },
+    {
+        "question": "After PUSH(5), PUSH(3), PUSH(8), POP(), what's on top of the stack?",
+        "answer": "3",
+        "topic": "Data Structures",
+        "difficulty": "Easy",
+        "explanation": "Stack: [5,3,8], POP removes 8, top is now 3"
+    },
+    {
+        "question": "What is the maximum number of nodes in a binary tree of height 3?",
+        "answer": "15",
         "topic": "Data Structures",
         "difficulty": "Medium",
-        "explanation": "A complete binary tree has all levels full except the last, which is filled left to right."
+        "explanation": "Max nodes = 2^(h+1) - 1 = 2^4 - 1 = 15"
     },
     {
-        "question": "In a hash table, what is a collision?",
-        "answer": "Two keys hash to the same index",
+        "question": "In a binary search tree, where are smaller values stored relative to a node?",
+        "answer": "Left",
         "alternateAnswers": [
-            "Two different keys map to same slot",
-            "When different keys have same hash"
+            "Left subtree",
+            "Left child"
         ],
         "topic": "Data Structures",
-        "difficulty": "Medium",
-        "explanation": "A collision occurs when two different keys produce the same hash value/index."
+        "difficulty": "Easy",
+        "explanation": "In a BST, values less than a node go in the left subtree."
     },
     {
-        "question": "What is the best case time complexity of quicksort?",
-        "answer": "O(n log n)",
+        "question": "What is the preorder traversal of a tree with root A, left child B, right child C?",
+        "answer": "A B C",
         "alternateAnswers": [
-            "O(nlogn)",
-            "n log n"
+            "ABC"
         ],
         "topic": "Data Structures",
-        "difficulty": "Medium",
-        "explanation": "Quicksort best/average case is O(n log n) when pivots split evenly."
+        "difficulty": "Easy",
+        "explanation": "Preorder: Root, Left, Right → A, B, C"
     },
     {
-        "question": "What is the space complexity of merge sort?",
-        "answer": "O(n)",
+        "question": "What is the inorder traversal if preorder is A B D E C F and postorder is D E B F C A?",
+        "answer": "D B E A F C",
         "alternateAnswers": [
-            "O(N)",
-            "Linear"
+            "DBEAFC"
         ],
         "topic": "Data Structures",
         "difficulty": "Hard",
-        "explanation": "Merge sort requires O(n) extra space for the temporary arrays during merging."
+        "explanation": "From pre/post, A is root. Left subtree: B,D,E. Right: C,F. Inorder: D B E A F C"
+    },
+    {
+        "question": "A binary tree has 15 nodes. What is its minimum possible height?",
+        "answer": "3",
+        "topic": "Data Structures",
+        "difficulty": "Medium",
+        "explanation": "A complete tree of height h has at most 2^(h+1)-1 nodes. 2^4-1=15, so height=3"
+    },
+    {
+        "question": "After ENQUEUE(1), ENQUEUE(2), DEQUEUE(), ENQUEUE(3), what's at front?",
+        "answer": "2",
+        "topic": "Data Structures",
+        "difficulty": "Medium",
+        "explanation": "Queue: [1,2], DEQUEUE removes 1, ENQUEUE(3) → [2,3], front is 2"
+    },
+    {
+        "question": "What is the postorder traversal of tree with root A, left child B (with left D), right child C?",
+        "answer": "D B C A",
+        "alternateAnswers": [
+            "DBCA"
+        ],
+        "topic": "Data Structures",
+        "difficulty": "Medium",
+        "explanation": "Postorder: Left, Right, Root. D, B, C, A"
+    },
+    {
+        "question": "What is the time complexity of binary search on a sorted array?",
+        "answer": "O(log n)",
+        "alternateAnswers": [
+            "log n",
+            "O(log(n))"
+        ],
+        "topic": "Data Structures",
+        "difficulty": "Medium",
+        "explanation": "Binary search halves the search space each step, giving O(log n)."
+    },
+    {
+        "question": "Write a regex for binary strings that end in '01'.",
+        "answer": "(0|1)*01",
+        "alternateAnswers": [
+            "[01]*01",
+            "(0+1)*01"
+        ],
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Easy",
+        "explanation": "Any binary string followed by 01 at the end."
+    },
+    {
+        "question": "What strings does the regex <code>a*b</code> match?",
+        "answer": "b, ab, aab, aaab, ...",
+        "alternateAnswers": [
+            "Zero or more a's followed by b"
+        ],
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Easy",
+        "explanation": "a* means zero or more a's, then exactly one b."
+    },
+    {
+        "question": "How many states minimum for an FSA accepting strings divisible by 3 (in unary)?",
+        "answer": "3",
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Medium",
+        "explanation": "States for remainder 0, 1, 2. Accept when in state 0."
+    },
+    {
+        "question": "Does <code>(ab)*</code> match 'abab'?",
+        "answer": "Yes",
+        "alternateAnswers": [
+            "yes",
+            "Y",
+            "TRUE",
+            "True"
+        ],
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Easy",
+        "explanation": "(ab)* matches zero or more repetitions of 'ab'. abab = (ab)(ab)."
+    },
+    {
+        "question": "What language does <code>a(a|b)*b</code> describe?",
+        "answer": "Strings starting with a and ending with b",
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Medium",
+        "explanation": "Starts with 'a', any combo of a/b in middle, ends with 'b'."
+    },
+    {
+        "question": "In an FSA, what symbol indicates an accept state?",
+        "answer": "Double circle",
+        "alternateAnswers": [
+            "double circle",
+            "Double-circle"
+        ],
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Easy",
+        "explanation": "Accept/final states are shown with double circles in FSA diagrams."
+    },
+    {
+        "question": "What is the regex for binary strings with at least one 1?",
+        "answer": "(0|1)*1(0|1)*",
+        "alternateAnswers": [
+            "0*1(0|1)*",
+            "[01]*1[01]*"
+        ],
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Medium",
+        "explanation": "Any binary prefix, then a 1, then any binary suffix."
+    },
+    {
+        "question": "How many states in a DFA for strings over {a,b} with even number of a's?",
+        "answer": "2",
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Medium",
+        "explanation": "Two states: even a's (accept) and odd a's. Toggle on each 'a'."
+    },
+    {
+        "question": "Does the regex <code>ab+</code> match 'a'?",
+        "answer": "No",
+        "alternateAnswers": [
+            "no",
+            "N",
+            "FALSE",
+            "False"
+        ],
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Easy",
+        "explanation": "ab+ requires one or more b's after a. 'a' has zero b's."
+    },
+    {
+        "question": "Write a regex for binary strings of length exactly 3.",
+        "answer": "(0|1)(0|1)(0|1)",
+        "alternateAnswers": [
+            "[01][01][01]",
+            "[01]{3}"
+        ],
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Medium",
+        "explanation": "Three characters, each 0 or 1."
+    },
+    {
+        "question": "What does the regex <code>.*</code> match over alphabet {a,b}?",
+        "answer": "All strings",
+        "alternateAnswers": [
+            "Everything",
+            "Any string"
+        ],
+        "topic": "FSAs and Regular Expressions",
+        "difficulty": "Easy",
+        "explanation": ".* matches any character zero or more times = all strings."
     }
 ]

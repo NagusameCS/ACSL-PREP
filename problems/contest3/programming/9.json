@@ -1,0 +1,38 @@
+{
+    "id": 9,
+    "title": "Word Processor",
+    "difficulty": "Medium",
+    "statement": "# Word Processor\n\nBessie is typing an essay and needs help formatting the text.\n\n## Problem Description\n\nBessie is typing N words into a document. Each word has a known length. She wants to format the words into lines where each line contains at most K characters (not counting spaces).\n\nWords must appear in order and cannot be split. Adjacent words on the same line are separated by a single space, but this space does not count toward the K character limit.\n\nDetermine how many lines are needed to format all the words.\n\n## Input Format\n\nThe first line contains N and K.\nThe second line contains N space-separated words.\n\n## Output Format\n\nA single integer representing the number of lines needed.\n\n## Constraints\n\n- 1 ≤ N ≤ 100\n- 1 ≤ K ≤ 1000\n- Each word length ≤ K",
+    "examples": [
+        {
+            "input": "10 7\nabc def ghi jkl mno pqr stu vwx yz abc",
+            "output": "5"
+        },
+        {
+            "input": "5 10\nhello world this is test",
+            "output": "3"
+        }
+    ],
+    "testCases": [
+        {
+            "input": "10 7\nabc def ghi jkl mno pqr stu vwx yz abc",
+            "output": "5"
+        },
+        {
+            "input": "5 10\nhello world this is test",
+            "output": "3"
+        },
+        {
+            "input": "3 100\nabc def ghi",
+            "output": "1"
+        },
+        {
+            "input": "5 5\nhello world again hello world",
+            "output": "5"
+        },
+        {
+            "input": "1 1\na",
+            "output": "1"
+        }
+    ]
+}

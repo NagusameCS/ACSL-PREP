@@ -49,84 +49,119 @@
         "explanation": "1A3₁₆ = 1×256 + 10×16 + 3 = 419₁₀. 419 ÷ 8 = 52 R3, 52 ÷ 8 = 6 R4, 6 ÷ 8 = 0 R6. Answer: 643₈"
     },
     {
-        "question": "Evaluate: <code>NOT (1 AND 0) OR 1</code>",
-        "answer": "1",
-        "alternateAnswers": [
-            "True",
-            "TRUE"
-        ],
-        "topic": "Boolean Algebra",
-        "difficulty": "Easy",
-        "explanation": "1 AND 0 = 0, NOT 0 = 1, 1 OR 1 = 1"
-    },
-    {
-        "question": "Simplify the Boolean expression: <code>A AND (A OR B)</code>",
-        "answer": "A",
-        "topic": "Boolean Algebra",
+        "question": "What is the largest 8-bit unsigned binary number in decimal?",
+        "answer": "255",
+        "topic": "Number Systems",
         "difficulty": "Medium",
-        "explanation": "By the Absorption Law: A AND (A OR B) = A"
+        "explanation": "11111111 in binary = 2^8 - 1 = 255"
     },
     {
-        "question": "Evaluate <code>(1 XOR 0) AND (1 OR 0)</code>",
-        "answer": "1",
-        "alternateAnswers": [
-            "True",
-            "TRUE"
-        ],
-        "topic": "Boolean Algebra",
-        "difficulty": "Easy",
-        "explanation": "1 XOR 0 = 1, 1 OR 0 = 1, 1 AND 1 = 1"
-    },
-    {
-        "question": "What is the Boolean expression for: output is 1 only when both inputs are different?",
-        "answer": "XOR",
-        "alternateAnswers": [
-            "A XOR B",
-            "A ⊕ B"
-        ],
-        "topic": "Boolean Algebra",
-        "difficulty": "Easy",
-        "explanation": "XOR (exclusive or) outputs 1 when inputs are different, 0 when they are the same."
-    },
-    {
-        "question": "Simplify: <code>NOT(A AND B)</code> using De Morgan's Law",
-        "answer": "NOT A OR NOT B",
-        "alternateAnswers": [
-            "(NOT A) OR (NOT B)",
-            "A' + B'"
-        ],
-        "topic": "Boolean Algebra",
+        "question": "Convert <code>110101</code> (binary) to hexadecimal.",
+        "answer": "35",
+        "topic": "Number Systems",
         "difficulty": "Medium",
-        "explanation": "De Morgan's Law: NOT(A AND B) = (NOT A) OR (NOT B)"
+        "explanation": "Group into 4 bits from right: 0011 0101 = 3 5 = 35 hex"
     },
     {
-        "question": "If <code>A = 1</code>, <code>B = 0</code>, <code>C = 1</code>, evaluate: <code>(A AND B) OR (NOT B AND C)</code>",
-        "answer": "1",
+        "question": "What is <code>11011</code> - <code>01110</code> in binary?",
+        "answer": "1101",
         "alternateAnswers": [
-            "True",
-            "TRUE"
+            "01101"
         ],
-        "topic": "Boolean Algebra",
+        "topic": "Number Systems",
         "difficulty": "Medium",
-        "explanation": "(1 AND 0) OR (NOT 0 AND 1) = 0 OR (1 AND 1) = 0 OR 1 = 1"
+        "explanation": "27 - 14 = 13 = 1101 in binary"
     },
     {
-        "question": "What value of x makes this true: <code>x AND 1 = 0</code>",
-        "answer": "0",
-        "alternateAnswers": [
-            "False",
-            "FALSE"
-        ],
-        "topic": "Boolean Algebra",
-        "difficulty": "Easy",
-        "explanation": "Only 0 AND 1 = 0. If x were 1, then 1 AND 1 = 1."
-    },
-    {
-        "question": "How many different Boolean functions of 2 variables exist?",
-        "answer": "16",
-        "topic": "Boolean Algebra",
+        "question": "In base 5, what is <code>432</code> in decimal?",
+        "answer": "117",
+        "topic": "Number Systems",
         "difficulty": "Hard",
-        "explanation": "With 2 variables, there are 4 input combinations. Each can output 0 or 1, so 2^4 = 16 functions."
+        "explanation": "4×25 + 3×5 + 2×1 = 100 + 15 + 2 = 117"
+    },
+    {
+        "question": "What is the two's complement of <code>0110</code> (4 bits)?",
+        "answer": "1010",
+        "topic": "Number Systems",
+        "difficulty": "Hard",
+        "explanation": "Invert: 1001, add 1: 1010. This represents -6 in 4-bit two's complement."
+    },
+    {
+        "question": "Evaluate: <code>f(3)</code> where <code>f(n) = n + f(n-1)</code> and <code>f(1) = 1</code>",
+        "answer": "6",
+        "topic": "Recursive Functions",
+        "difficulty": "Easy",
+        "explanation": "f(3) = 3 + f(2) = 3 + (2 + f(1)) = 3 + 2 + 1 = 6"
+    },
+    {
+        "question": "What is <code>fib(5)</code> where <code>fib(n) = fib(n-1) + fib(n-2)</code>, <code>fib(1) = fib(2) = 1</code>?",
+        "answer": "5",
+        "topic": "Recursive Functions",
+        "difficulty": "Medium",
+        "explanation": "fib(5) = fib(4) + fib(3) = 3 + 2 = 5. Sequence: 1, 1, 2, 3, 5"
+    },
+    {
+        "question": "Evaluate: <code>g(4)</code> where <code>g(n) = 2 * g(n-1)</code> and <code>g(1) = 3</code>",
+        "answer": "24",
+        "topic": "Recursive Functions",
+        "difficulty": "Easy",
+        "explanation": "g(4) = 2×g(3) = 2×2×g(2) = 2×2×2×g(1) = 8×3 = 24"
+    },
+    {
+        "question": "What is <code>h(4)</code> where <code>h(n) = h(n-1) + h(n-2)</code>, <code>h(0) = 2</code>, <code>h(1) = 1</code>?",
+        "answer": "7",
+        "topic": "Recursive Functions",
+        "difficulty": "Medium",
+        "explanation": "h(2)=1+2=3, h(3)=3+1=4, h(4)=4+3=7"
+    },
+    {
+        "question": "How many times is <code>f</code> called (including initial) for <code>f(4)</code> where <code>f(n) = f(n-1) + f(n-2)</code>, <code>f(0)=f(1)=1</code>?",
+        "answer": "9",
+        "topic": "Recursive Functions",
+        "difficulty": "Hard",
+        "explanation": "f(4) calls f(3) and f(2). f(3) calls f(2) and f(1). f(2) calls f(1) and f(0). Total: 9 calls"
+    },
+    {
+        "question": "Evaluate: <code>p(3, 2)</code> where <code>p(a, b) = a * p(a, b-1)</code> if <code>b > 0</code>, else <code>1</code>",
+        "answer": "9",
+        "topic": "Recursive Functions",
+        "difficulty": "Medium",
+        "explanation": "p(3,2) = 3 × p(3,1) = 3 × 3 × p(3,0) = 3 × 3 × 1 = 9. This computes 3^2."
+    },
+    {
+        "question": "What is <code>sum(4)</code> where <code>sum(n) = n + sum(n-1)</code> if <code>n > 0</code>, else <code>0</code>?",
+        "answer": "10",
+        "topic": "Recursive Functions",
+        "difficulty": "Easy",
+        "explanation": "sum(4) = 4 + 3 + 2 + 1 + 0 = 10 (triangular number)"
+    },
+    {
+        "question": "Evaluate: <code>m(10)</code> where <code>m(n) = m(n/2)</code> if <code>n > 1</code>, else <code>n</code> (integer division)",
+        "answer": "1",
+        "topic": "Recursive Functions",
+        "difficulty": "Medium",
+        "explanation": "m(10) = m(5) = m(2) = m(1) = 1"
+    },
+    {
+        "question": "What is <code>gcd(48, 18)</code> using Euclidean algorithm recursively?",
+        "answer": "6",
+        "topic": "Recursive Functions",
+        "difficulty": "Hard",
+        "explanation": "gcd(48,18) = gcd(18, 48%18) = gcd(18,12) = gcd(12,6) = gcd(6,0) = 6"
+    },
+    {
+        "question": "For <code>f(n) = 2*f(n-1) + 1</code>, <code>f(0) = 0</code>, what is <code>f(4)</code>?",
+        "answer": "15",
+        "topic": "Recursive Functions",
+        "difficulty": "Medium",
+        "explanation": "f(1)=1, f(2)=3, f(3)=7, f(4)=15. Pattern: 2^n - 1"
+    },
+    {
+        "question": "How many recursive calls to compute <code>fact(5)</code> where <code>fact(n) = n * fact(n-1)</code>, <code>fact(0)=1</code>?",
+        "answer": "5",
+        "topic": "Recursive Functions",
+        "difficulty": "Medium",
+        "explanation": "fact(5) → fact(4) → fact(3) → fact(2) → fact(1) → fact(0). That's 5 recursive calls."
     },
     {
         "question": "What does the following code output?<pre>x = 5\nfor i in range(3):\n    x = x + i\nprint(x)</pre>",
@@ -157,7 +192,7 @@
         "answer": "24",
         "topic": "What Does This Program Do",
         "difficulty": "Medium",
-        "explanation": "This is factorial. foo(4) = 4 × foo(3) = 4 × 3 × foo(2) = 4 × 3 × 2 × foo(1) = 4 × 3 × 2 × 1 = 24"
+        "explanation": "This is factorial. foo(4) = 4 × 3 × 2 × 1 = 24"
     },
     {
         "question": "What is the output?<pre>x = 10\nwhile x > 0:\n    x = x - 3\nprint(x)</pre>",
@@ -167,85 +202,62 @@
         "explanation": "x: 10 → 7 → 4 → 1 → -2. Loop stops when x = -2 (not > 0)."
     },
     {
-        "question": "In prefix notation, how do you write: <code>(3 + 4) * 5</code>",
-        "answer": "* + 3 4 5",
-        "topic": "Prefix/Infix/Postfix",
+        "question": "What is printed?<pre>count = 0\nfor i in range(1, 10):\n    if i % 3 == 0:\n        count += 1\nprint(count)</pre>",
+        "answer": "3",
+        "topic": "What Does This Program Do",
         "difficulty": "Easy",
-        "explanation": "First + 3 4 (for 3+4), then * that result with 5: * + 3 4 5"
+        "explanation": "Numbers 1-9 divisible by 3: 3, 6, 9. Count = 3"
     },
     {
-        "question": "In postfix notation, how do you write: <code>2 + 3 * 4</code>",
-        "answer": "2 3 4 * +",
-        "topic": "Prefix/Infix/Postfix",
+        "question": "What is the output?<pre>n = 1234\nsum = 0\nwhile n > 0:\n    sum += n % 10\n    n = n // 10\nprint(sum)</pre>",
+        "answer": "10",
+        "topic": "What Does This Program Do",
         "difficulty": "Medium",
-        "explanation": "Due to precedence, 3*4 first: 3 4 *, then add 2: 2 3 4 * +"
+        "explanation": "Sum of digits: 4 + 3 + 2 + 1 = 10"
     },
     {
-        "question": "Evaluate the postfix expression: <code>5 3 + 2 *</code>",
-        "answer": "16",
-        "topic": "Prefix/Infix/Postfix",
+        "question": "What does this print?<pre>arr = [3, 1, 4, 1, 5]\nprint(max(arr) - min(arr))</pre>",
+        "answer": "4",
+        "topic": "What Does This Program Do",
         "difficulty": "Easy",
-        "explanation": "5 3 + = 8, then 8 2 * = 16"
+        "explanation": "max = 5, min = 1, difference = 4"
     },
     {
-        "question": "Evaluate the prefix expression: <code>- * 4 5 + 2 3</code>",
-        "answer": "15",
-        "topic": "Prefix/Infix/Postfix",
+        "question": "What is the output?<pre>s = \"hello\"\nresult = \"\"\nfor c in s:\n    result = c + result\nprint(result)</pre>",
+        "answer": "olleh",
+        "topic": "What Does This Program Do",
         "difficulty": "Medium",
-        "explanation": "* 4 5 = 20, + 2 3 = 5, - 20 5 = 15"
+        "explanation": "Each character is prepended, reversing the string: olleh"
     },
     {
-        "question": "Convert to infix: <code>+ * 2 3 4</code>",
-        "answer": "(2 * 3) + 4",
+        "question": "What is printed?<pre>x, y = 5, 3\nx, y = y, x + y\nprint(x, y)</pre>",
+        "answer": "3 8",
         "alternateAnswers": [
-            "2 * 3 + 4",
-            "2*3+4"
+            "3, 8"
         ],
-        "topic": "Prefix/Infix/Postfix",
+        "topic": "What Does This Program Do",
         "difficulty": "Medium",
-        "explanation": "* 2 3 → 2*3, then + (2*3) 4 → (2*3) + 4"
+        "explanation": "Simultaneous assignment: x becomes 3, y becomes 5+3=8"
     },
     {
-        "question": "What data structure uses LIFO (Last In, First Out)?",
-        "answer": "Stack",
-        "topic": "Data Structures",
-        "difficulty": "Easy",
-        "explanation": "A stack follows LIFO - the last element added is the first one removed."
-    },
-    {
-        "question": "What data structure uses FIFO (First In, First Out)?",
-        "answer": "Queue",
-        "topic": "Data Structures",
-        "difficulty": "Easy",
-        "explanation": "A queue follows FIFO - the first element added is the first one removed."
-    },
-    {
-        "question": "In a binary search tree, where are smaller values stored relative to a node?",
-        "answer": "Left",
-        "alternateAnswers": [
-            "Left subtree",
-            "Left child"
-        ],
-        "topic": "Data Structures",
-        "difficulty": "Easy",
-        "explanation": "In a BST, values less than a node go in the left subtree, greater values go right."
-    },
-    {
-        "question": "What is the maximum number of nodes in a binary tree of height 3?",
-        "answer": "15",
-        "topic": "Data Structures",
+        "question": "What is the output?<pre>grid = [[1,2],[3,4]]\nprint(grid[1][0] + grid[0][1])</pre>",
+        "answer": "5",
+        "topic": "What Does This Program Do",
         "difficulty": "Medium",
-        "explanation": "Max nodes = 2^(h+1) - 1 = 2^4 - 1 = 16 - 1 = 15"
+        "explanation": "grid[1][0] = 3, grid[0][1] = 2, sum = 5"
     },
     {
-        "question": "What is the time complexity of binary search on a sorted array of n elements?",
-        "answer": "O(log n)",
-        "alternateAnswers": [
-            "log n",
-            "O(log(n))"
-        ],
-        "topic": "Data Structures",
+        "question": "How many times does the inner loop execute?<pre>for i in range(3):\n    for j in range(4):\n        print(i, j)</pre>",
+        "answer": "12",
+        "topic": "What Does This Program Do",
+        "difficulty": "Easy",
+        "explanation": "3 outer iterations × 4 inner iterations = 12 total"
+    },
+    {
+        "question": "What is printed?<pre>def f(x):\n    return x * 2\ndef g(x):\n    return x + 3\nprint(f(g(4)))</pre>",
+        "answer": "14",
+        "topic": "What Does This Program Do",
         "difficulty": "Medium",
-        "explanation": "Binary search halves the search space each step, giving O(log n) complexity."
+        "explanation": "g(4) = 7, f(7) = 14"
     }
 ]

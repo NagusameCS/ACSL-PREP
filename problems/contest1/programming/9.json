@@ -1,0 +1,50 @@
+{
+    "id": 9,
+    "title": "Fence Painting",
+    "difficulty": "Medium",
+    "statement": "# Fence Painting\n\nFarmer John wants to paint sections of his fence.\n\n## Problem Description\n\nFarmer John has a long fence represented as a number line. He wants to paint two sections of the fence: one section from A to B, and another from C to D (inclusive on both ends).\n\nDetermine the total length of fence that will be painted. Note that if the sections overlap, the overlapping portion should only be counted once.\n\n## Input Format\n\nFour space-separated integers A, B, C, D representing the two fence sections [A,B] and [C,D].\n\n## Output Format\n\nA single integer representing the total length of painted fence.\n\n## Constraints\n\n- 0 ≤ A ≤ B ≤ 100\n- 0 ≤ C ≤ D ≤ 100",
+    "examples": [
+        {
+            "input": "0 5 3 8",
+            "output": "8"
+        },
+        {
+            "input": "0 3 5 8",
+            "output": "6"
+        },
+        {
+            "input": "2 5 2 5",
+            "output": "3"
+        }
+    ],
+    "testCases": [
+        {
+            "input": "0 5 3 8",
+            "output": "8"
+        },
+        {
+            "input": "0 3 5 8",
+            "output": "6"
+        },
+        {
+            "input": "2 5 2 5",
+            "output": "3"
+        },
+        {
+            "input": "0 10 0 10",
+            "output": "10"
+        },
+        {
+            "input": "0 50 25 75",
+            "output": "75"
+        },
+        {
+            "input": "10 20 30 40",
+            "output": "20"
+        },
+        {
+            "input": "0 100 0 100",
+            "output": "100"
+        }
+    ]
+}

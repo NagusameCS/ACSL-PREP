@@ -1,0 +1,38 @@
+{
+    "id": 9,
+    "title": "Blocked Billboard",
+    "difficulty": "Medium",
+    "statement": "# Blocked Billboard\n\nDuring the last summer, two billboards were placed along a highway.\n\n## Problem Description\n\nTwo rectangular billboards were placed along a highway. A large truck then parked in front of them, blocking some portion of both billboards.\n\nGiven the coordinates of the two billboards and the truck, calculate the total visible (unblocked) area of the two billboards.\n\nEach rectangle is specified by its lower-left corner (x1, y1) and upper-right corner (x2, y2).\n\n## Input Format\n\nThree lines, each containing four integers x1, y1, x2, y2.\n- Line 1: Billboard 1 coordinates\n- Line 2: Billboard 2 coordinates  \n- Line 3: Truck coordinates\n\n## Output Format\n\nA single integer representing the total visible area.\n\n## Constraints\n\n- -1000 ≤ x1 < x2 ≤ 1000\n- -1000 ≤ y1 < y2 ≤ 1000",
+    "examples": [
+        {
+            "input": "0 0 10 10\n15 0 25 10\n5 0 20 5",
+            "output": "125"
+        },
+        {
+            "input": "0 0 5 5\n10 0 15 5\n0 0 5 5",
+            "output": "25"
+        }
+    ],
+    "testCases": [
+        {
+            "input": "0 0 10 10\n15 0 25 10\n5 0 20 5",
+            "output": "125"
+        },
+        {
+            "input": "0 0 5 5\n10 0 15 5\n0 0 5 5",
+            "output": "25"
+        },
+        {
+            "input": "0 0 10 10\n0 0 10 10\n5 5 15 15",
+            "output": "150"
+        },
+        {
+            "input": "-10 -10 0 0\n10 10 20 20\n-5 -5 15 15",
+            "output": "100"
+        },
+        {
+            "input": "0 0 100 100\n200 0 300 100\n50 50 250 60",
+            "output": "19000"
+        }
+    ]
+}

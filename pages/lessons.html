@@ -987,6 +987,687 @@ print(output)
                     <h2 id="practice">Practice</h2>
                     <ol><li>What is "python"[2:5]?</li><li>What does "abc" * 3 produce?</li></ol>
                 \`
+            },
+            'program-tracing': {
+                title: 'What Does This Program Do?',
+                subtitle: 'Systematic approaches to trace code execution and determine output',
+                sections: [
+                    { id: 'intro', title: 'Introduction' },
+                    { id: 'variables', title: 'Variable Tracking' },
+                    { id: 'conditionals', title: 'Conditionals' },
+                    { id: 'loops', title: 'Loop Tracing' },
+                    { id: 'functions', title: 'Function Calls' },
+                    { id: 'practice', title: 'Practice' }
+                ],
+                content: \`
+                    <h2 id="intro">What Does This Program Do?</h2>
+                    <p>WDTPD problems require you to manually execute code and determine the output. This is a core ACSL skill tested in every contest.</p>
+                    <div class="info-box">
+                        <div class="info-box-title"><span class="material-icons">lightbulb</span> Golden Rule</div>
+                        <p>Create a trace table! Track every variable's value after each line executes.</p>
+                    </div>
+                    <h2 id="variables">Variable Tracking</h2>
+                    <p>The foundation of program tracing is keeping track of variable values:</p>
+                    <pre><code>a = 5
+b = a + 3      # b = 8
+a = b * 2      # a = 16
+b = a - b      # b = 16 - 8 = 8
+print(a, b)    # Output: 16 8</code></pre>
+                    <div class="info-box tip">
+                        <div class="info-box-title"><span class="material-icons">table_chart</span> Trace Table</div>
+                        <table>
+                            <tr><th>Line</th><th>a</th><th>b</th></tr>
+                            <tr><td>1</td><td>5</td><td>-</td></tr>
+                            <tr><td>2</td><td>5</td><td>8</td></tr>
+                            <tr><td>3</td><td>16</td><td>8</td></tr>
+                            <tr><td>4</td><td>16</td><td>8</td></tr>
+                        </table>
+                    </div>
+                    <h2 id="conditionals">Tracing Conditionals</h2>
+                    <pre><code>x = 15
+if x > 20:
+    result = "large"
+elif x > 10:
+    result = "medium"    # This branch executes
+else:
+    result = "small"
+print(result)  # Output: medium</code></pre>
+                    <h2 id="loops">Loop Tracing</h2>
+                    <p>For loops, track the loop variable AND any accumulator variables:</p>
+                    <pre><code>total = 0
+for i in range(1, 5):
+    total = total + i * i
+print(total)
+
+# Trace:
+# i=1: total = 0 + 1 = 1
+# i=2: total = 1 + 4 = 5
+# i=3: total = 5 + 9 = 14
+# i=4: total = 14 + 16 = 30
+# Output: 30</code></pre>
+                    <h2 id="functions">Function Calls</h2>
+                    <pre><code>def mystery(a, b):
+    if a > b:
+        return a - b
+    return b - a
+
+x = mystery(3, 7)  # 7 - 3 = 4
+y = mystery(10, 4) # 10 - 4 = 6
+print(x + y)       # Output: 10</code></pre>
+                    <h2 id="practice">Practice Problems</h2>
+                    <ol>
+                        <li>What is the output when n=5? <code>for i in range(n, 0, -1): print(i, end="")</code></li>
+                        <li>Trace: x=1; while x<20: x=x*2+1</li>
+                    </ol>
+                \`
+            },
+            'notation': {
+                title: 'Expression Notation',
+                subtitle: 'Convert and evaluate expressions in prefix, infix, and postfix notation',
+                sections: [
+                    { id: 'intro', title: 'Introduction' },
+                    { id: 'infix', title: 'Infix Notation' },
+                    { id: 'prefix', title: 'Prefix (Polish)' },
+                    { id: 'postfix', title: 'Postfix (RPN)' },
+                    { id: 'conversion', title: 'Conversion Methods' },
+                    { id: 'evaluation', title: 'Evaluation' },
+                    { id: 'practice', title: 'Practice' }
+                ],
+                content: \`
+                    <h2 id="intro">Expression Notation</h2>
+                    <p>There are three ways to write mathematical expressions based on operator position:</p>
+                    <table>
+                        <tr><th>Notation</th><th>Format</th><th>Example (2+3)</th></tr>
+                        <tr><td>Infix</td><td>operand operator operand</td><td>2 + 3</td></tr>
+                        <tr><td>Prefix</td><td>operator operand operand</td><td>+ 2 3</td></tr>
+                        <tr><td>Postfix</td><td>operand operand operator</td><td>2 3 +</td></tr>
+                    </table>
+                    <h2 id="infix">Infix Notation</h2>
+                    <p>Standard mathematical notation. Requires parentheses and precedence rules.</p>
+                    <div class="info-box">
+                        <div class="info-box-title"><span class="material-icons">priority_high</span> Precedence (High to Low)</div>
+                        <p>^ (exponent) → * / → + - → Parentheses override all</p>
+                    </div>
+                    <h2 id="prefix">Prefix (Polish Notation)</h2>
+                    <p>Operator comes BEFORE operands. Read right-to-left to evaluate.</p>
+                    <pre><code>Infix: (3 + 4) * 5
+Prefix: * + 3 4 5
+
+Infix: 3 + 4 * 5  
+Prefix: + 3 * 4 5 (because * has higher precedence)</code></pre>
+                    <h2 id="postfix">Postfix (Reverse Polish Notation)</h2>
+                    <p>Operator comes AFTER operands. Used by calculators and compilers.</p>
+                    <pre><code>Infix: (3 + 4) * 5
+Postfix: 3 4 + 5 *
+
+Infix: 3 + 4 * 5
+Postfix: 3 4 5 * + (4*5 first, then add 3)</code></pre>
+                    <h2 id="conversion">Conversion Methods</h2>
+                    <h3>Infix → Postfix (using stacks)</h3>
+                    <ol>
+                        <li>Scan left to right</li>
+                        <li>Output operands immediately</li>
+                        <li>Push operators to stack (pop higher/equal precedence first)</li>
+                        <li>( pushes to stack, ) pops until (</li>
+                    </ol>
+                    <div class="info-box example">
+                        <div class="info-box-title"><span class="material-icons">edit</span> Example: A + B * C</div>
+                        <pre><code>A → output A
++ → push +
+B → output B
+* → push * (higher precedence than +)
+C → output C
+End → pop all: * then +
+Result: A B C * +</code></pre>
+                    </div>
+                    <h2 id="evaluation">Evaluating Postfix</h2>
+                    <pre><code>Expression: 5 3 + 2 *
+Stack: []
+5 → [5]
+3 → [5, 3]
++ → pop 3,5, push 8 → [8]
+2 → [8, 2]
+* → pop 2,8, push 16 → [16]
+Result: 16</code></pre>
+                    <h2 id="practice">Practice</h2>
+                    <ol>
+                        <li>Convert to postfix: A * (B + C) - D</li>
+                        <li>Evaluate: 6 2 / 3 + 4 *</li>
+                        <li>Convert to infix: * + A B - C D</li>
+                    </ol>
+                \`
+            },
+            'bit-string': {
+                title: 'Bit-String Flicking',
+                subtitle: 'Master bitwise operations and binary string manipulation',
+                sections: [
+                    { id: 'intro', title: 'Introduction' },
+                    { id: 'operators', title: 'Bitwise Operators' },
+                    { id: 'shifts', title: 'Shift Operations' },
+                    { id: 'solving', title: 'Solving Problems' },
+                    { id: 'practice', title: 'Practice' }
+                ],
+                content: \`
+                    <h2 id="intro">Bit-String Flicking</h2>
+                    <p>Bit-string problems involve applying logical operations to binary strings bit by bit.</p>
+                    <div class="info-box">
+                        <div class="info-box-title"><span class="material-icons">memory</span> Key Concept</div>
+                        <p>Operations are applied to corresponding bits in each position. Strings must be aligned (usually right-aligned, padded with zeros on left).</p>
+                    </div>
+                    <h2 id="operators">Bitwise Operators</h2>
+                    <table>
+                        <tr><th>Operation</th><th>Symbol</th><th>Rule</th><th>Example</th></tr>
+                        <tr><td>NOT</td><td>~</td><td>Flip each bit</td><td>~1010 = 0101</td></tr>
+                        <tr><td>AND</td><td>&</td><td>1 if both are 1</td><td>1010 & 1100 = 1000</td></tr>
+                        <tr><td>OR</td><td>|</td><td>1 if either is 1</td><td>1010 | 1100 = 1110</td></tr>
+                        <tr><td>XOR</td><td>^</td><td>1 if different</td><td>1010 ^ 1100 = 0110</td></tr>
+                    </table>
+                    <div class="info-box example">
+                        <div class="info-box-title"><span class="material-icons">edit</span> Example: 10110 AND 01101</div>
+                        <pre><code>  10110
+& 01101
+-------
+  00100</code></pre>
+                    </div>
+                    <h2 id="shifts">Shift Operations</h2>
+                    <table>
+                        <tr><th>Operation</th><th>Effect</th><th>Example</th></tr>
+                        <tr><td>LSHIFT-n</td><td>Shift left n positions, fill with 0s</td><td>LSHIFT-2 10110 = 11000</td></tr>
+                        <tr><td>RSHIFT-n</td><td>Shift right n positions, fill with 0s</td><td>RSHIFT-2 10110 = 00101</td></tr>
+                        <tr><td>LCIRC-n</td><td>Circular shift left</td><td>LCIRC-2 10110 = 11010</td></tr>
+                        <tr><td>RCIRC-n</td><td>Circular shift right</td><td>RCIRC-2 10110 = 10101</td></tr>
+                    </table>
+                    <div class="info-box warning">
+                        <div class="info-box-title"><span class="material-icons">warning</span> Watch Out</div>
+                        <p>In circular shifts, bits that fall off one end wrap around to the other end!</p>
+                    </div>
+                    <h2 id="solving">Solving Complex Problems</h2>
+                    <pre><code>Problem: (LSHIFT-1 1011) XOR (NOT 1100)
+
+Step 1: LSHIFT-1 1011 = 0110
+Step 2: NOT 1100 = 0011
+Step 3: 0110 XOR 0011 = 0101
+
+Answer: 0101</code></pre>
+                    <h2 id="practice">Practice</h2>
+                    <ol>
+                        <li>Evaluate: NOT (10101 AND 11011)</li>
+                        <li>What is RCIRC-3 11010101?</li>
+                        <li>Solve: (LSHIFT-2 1111) OR (RSHIFT-1 1111)</li>
+                    </ol>
+                \`
+            },
+            'lisp': {
+                title: 'LISP Programming',
+                subtitle: 'Learn functional programming with list processing',
+                sections: [
+                    { id: 'intro', title: 'Introduction' },
+                    { id: 'atoms', title: 'Atoms & Lists' },
+                    { id: 'car-cdr', title: 'CAR and CDR' },
+                    { id: 'cons', title: 'CONS' },
+                    { id: 'arithmetic', title: 'Arithmetic' },
+                    { id: 'conditionals', title: 'Conditionals' },
+                    { id: 'practice', title: 'Practice' }
+                ],
+                content: \`
+                    <h2 id="intro">Introduction to LISP</h2>
+                    <p>LISP (LISt Processing) is one of the oldest programming languages. Everything is either an atom or a list.</p>
+                    <div class="info-box">
+                        <div class="info-box-title"><span class="material-icons">code</span> Syntax Rule</div>
+                        <p>All LISP expressions use prefix notation: (function arg1 arg2 ...)</p>
+                    </div>
+                    <h2 id="atoms">Atoms and Lists</h2>
+                    <p><strong>Atom:</strong> A single value (number, symbol)</p>
+                    <p><strong>List:</strong> Items enclosed in parentheses: (A B C)</p>
+                    <pre><code>5           ; atom (number)
+X           ; atom (symbol)
+(1 2 3)     ; list of 3 atoms
+((A B) C)   ; nested list
+NIL or ()   ; empty list</code></pre>
+                    <h2 id="car-cdr">CAR and CDR</h2>
+                    <p><strong>CAR:</strong> Returns the FIRST element of a list</p>
+                    <p><strong>CDR:</strong> Returns EVERYTHING EXCEPT the first element</p>
+                    <pre><code>(CAR '(A B C))     → A
+(CDR '(A B C))     → (B C)
+(CAR '((1 2) 3))   → (1 2)
+(CDR '((1 2) 3))   → (3)
+(CAR (CDR '(A B C))) → B  ; CADR
+(CDR (CDR '(A B C))) → (C) ; CDDR</code></pre>
+                    <div class="info-box tip">
+                        <div class="info-box-title"><span class="material-icons">tips_and_updates</span> Shorthand</div>
+                        <p>CADR = CAR of CDR, CADDR = CAR of CDR of CDR, etc.</p>
+                    </div>
+                    <h2 id="cons">CONS</h2>
+                    <p>CONS adds an element to the FRONT of a list:</p>
+                    <pre><code>(CONS 'A '(B C))   → (A B C)
+(CONS '(1 2) '(3)) → ((1 2) 3)
+(CONS 'X NIL)      → (X)</code></pre>
+                    <h2 id="arithmetic">Arithmetic Operations</h2>
+                    <pre><code>(+ 3 4)        → 7
+(- 10 3)       → 7
+(* 2 3 4)      → 24
+(/ 15 3)       → 5
+(ADD1 5)       → 6  ; adds 1
+(SUB1 5)       → 4  ; subtracts 1</code></pre>
+                    <h2 id="conditionals">Conditionals</h2>
+                    <pre><code>(ATOM 'X)      → T (true)
+(ATOM '(A B))  → NIL (false)
+(NULL NIL)     → T
+(EQ 'A 'A)     → T
+(IF (> 5 3) 'YES 'NO) → YES</code></pre>
+                    <h2 id="practice">Practice</h2>
+                    <ol>
+                        <li>What is (CAR (CDR (CDR '(A B C D))))?</li>
+                        <li>Evaluate: (CONS (CAR '(1 2)) (CDR '(3 4)))</li>
+                        <li>What is (* (+ 2 3) (- 8 4))?</li>
+                    </ol>
+                \`
+            },
+            'boolean-algebra': {
+                title: 'Boolean Algebra',
+                subtitle: 'Simplify expressions and apply logic laws',
+                sections: [
+                    { id: 'intro', title: 'Introduction' },
+                    { id: 'operators', title: 'Boolean Operators' },
+                    { id: 'laws', title: 'Boolean Laws' },
+                    { id: 'demorgan', title: "De Morgan's Laws" },
+                    { id: 'simplification', title: 'Simplification' },
+                    { id: 'practice', title: 'Practice' }
+                ],
+                content: \`
+                    <h2 id="intro">Boolean Algebra</h2>
+                    <p>Boolean algebra deals with binary values (TRUE/FALSE or 1/0) and logical operations.</p>
+                    <h2 id="operators">Boolean Operators</h2>
+                    <table>
+                        <tr><th>Operator</th><th>Symbol</th><th>True When</th></tr>
+                        <tr><td>AND</td><td>· or ∧</td><td>Both inputs are true</td></tr>
+                        <tr><td>OR</td><td>+ or ∨</td><td>At least one input is true</td></tr>
+                        <tr><td>NOT</td><td>' or ¬ or ~</td><td>Input is false</td></tr>
+                        <tr><td>XOR</td><td>⊕</td><td>Inputs are different</td></tr>
+                    </table>
+                    <h2 id="laws">Boolean Laws</h2>
+                    <pre><code>Identity:     A + 0 = A       A · 1 = A
+Null:         A + 1 = 1       A · 0 = 0
+Idempotent:   A + A = A       A · A = A
+Complement:   A + A' = 1      A · A' = 0
+Double Neg:   (A')' = A
+Commutative:  A + B = B + A   A · B = B · A
+Associative:  (A+B)+C = A+(B+C)
+Distributive: A·(B+C) = A·B + A·C
+              A+(B·C) = (A+B)·(A+C)
+Absorption:   A + (A · B) = A
+              A · (A + B) = A</code></pre>
+                    <h2 id="demorgan">De Morgan's Laws</h2>
+                    <div class="info-box">
+                        <div class="info-box-title"><span class="material-icons">auto_fix_high</span> De Morgan's Laws</div>
+                        <p><strong>(A · B)' = A' + B'</strong> — NOT of AND = OR of NOTs</p>
+                        <p><strong>(A + B)' = A' · B'</strong> — NOT of OR = AND of NOTs</p>
+                    </div>
+                    <h2 id="simplification">Simplification Example</h2>
+                    <pre><code>Simplify: A·B + A·B'
+= A·(B + B')    ; Factor out A
+= A·1           ; Complement law
+= A             ; Identity law
+
+Simplify: (A + B)·(A + B')
+= A + (B · B')  ; Distributive
+= A + 0         ; Complement
+= A             ; Identity</code></pre>
+                    <h2 id="practice">Practice</h2>
+                    <ol>
+                        <li>Simplify: A·B + A·B + B</li>
+                        <li>Apply De Morgan's: (X · Y · Z)'</li>
+                        <li>Simplify: (A + B) · (A + C) · (B + C)</li>
+                    </ol>
+                \`
+            },
+            'data-structures': {
+                title: 'Data Structures',
+                subtitle: 'Understand stacks, queues, trees, and their operations',
+                sections: [
+                    { id: 'intro', title: 'Introduction' },
+                    { id: 'stacks', title: 'Stacks (LIFO)' },
+                    { id: 'queues', title: 'Queues (FIFO)' },
+                    { id: 'trees', title: 'Binary Trees' },
+                    { id: 'traversal', title: 'Tree Traversal' },
+                    { id: 'bst', title: 'Binary Search Trees' },
+                    { id: 'practice', title: 'Practice' }
+                ],
+                content: \`
+                    <h2 id="intro">Data Structures</h2>
+                    <p>Data structures organize data for efficient access and modification.</p>
+                    <h2 id="stacks">Stacks (LIFO)</h2>
+                    <p>Last In, First Out — like a stack of plates.</p>
+                    <pre><code>Operations:
+PUSH(x) - Add x to top
+POP()   - Remove and return top
+PEEK()  - Return top without removing
+
+Example:
+PUSH(5), PUSH(3), PUSH(8)
+Stack: [5, 3, 8] (8 is top)
+POP() → 8
+Stack: [5, 3]</code></pre>
+                    <h2 id="queues">Queues (FIFO)</h2>
+                    <p>First In, First Out — like a line at a store.</p>
+                    <pre><code>Operations:
+ENQUEUE(x) - Add x to back
+DEQUEUE()  - Remove and return front
+
+Example:
+ENQUEUE(5), ENQUEUE(3), ENQUEUE(8)
+Queue: [5, 3, 8] (5 is front)
+DEQUEUE() → 5
+Queue: [3, 8]</code></pre>
+                    <h2 id="trees">Binary Trees</h2>
+                    <p>Each node has at most 2 children (left and right).</p>
+                    <pre><code>       A
+      / \\
+     B   C
+    / \\   \\
+   D   E   F
+
+Root: A
+Leaves: D, E, F (no children)
+Height: 2 (edges from root to deepest leaf)</code></pre>
+                    <h2 id="traversal">Tree Traversal</h2>
+                    <table>
+                        <tr><th>Type</th><th>Order</th><th>Result (above tree)</th></tr>
+                        <tr><td>Preorder</td><td>Root, Left, Right</td><td>A B D E C F</td></tr>
+                        <tr><td>Inorder</td><td>Left, Root, Right</td><td>D B E A C F</td></tr>
+                        <tr><td>Postorder</td><td>Left, Right, Root</td><td>D E B F C A</td></tr>
+                    </table>
+                    <h2 id="bst">Binary Search Trees</h2>
+                    <p>Left subtree contains smaller values, right contains larger.</p>
+                    <pre><code>Insert 50, 30, 70, 20, 40:
+       50
+      /  \\
+    30    70
+   /  \\
+  20  40
+
+Search for 40:
+50→30→40 (found in 3 comparisons)</code></pre>
+                    <h2 id="practice">Practice</h2>
+                    <ol>
+                        <li>After PUSH(1), PUSH(2), POP(), PUSH(3), what's on top?</li>
+                        <li>Give inorder traversal of a BST with values 5,3,7,2,4,6,8</li>
+                        <li>What's the maximum nodes in a binary tree of height 4?</li>
+                    </ol>
+                \`
+            },
+            'fsa-regex': {
+                title: 'FSAs & Regular Expressions',
+                subtitle: 'Build and analyze finite state machines and patterns',
+                sections: [
+                    { id: 'intro', title: 'Introduction' },
+                    { id: 'fsa', title: 'Finite State Automata' },
+                    { id: 'diagrams', title: 'State Diagrams' },
+                    { id: 'regex', title: 'Regular Expressions' },
+                    { id: 'equivalence', title: 'FSA-Regex Equivalence' },
+                    { id: 'practice', title: 'Practice' }
+                ],
+                content: \`
+                    <h2 id="intro">Introduction</h2>
+                    <p>FSAs and regex both describe patterns in strings. They are mathematically equivalent.</p>
+                    <h2 id="fsa">Finite State Automata</h2>
+                    <p>An FSA consists of:</p>
+                    <ul>
+                        <li><strong>States:</strong> Including start and accept states</li>
+                        <li><strong>Alphabet:</strong> Valid input symbols</li>
+                        <li><strong>Transitions:</strong> Rules for moving between states</li>
+                    </ul>
+                    <h2 id="diagrams">Reading State Diagrams</h2>
+                    <pre><code>→(S0)--a-->(S1)--b-->((S2))
+
+S0: Start state (arrow pointing to it)
+S2: Accept state (double circle)
+Transitions: a from S0→S1, b from S1→S2
+
+This FSA accepts: "ab"</code></pre>
+                    <div class="info-box example">
+                        <div class="info-box-title"><span class="material-icons">edit</span> Example: Strings ending in "01"</div>
+                        <pre><code>States: S0 (start), S1, S2 (accept)
+S0 --0--> S1
+S0 --1--> S0
+S1 --0--> S1
+S1 --1--> S2
+S2 --0--> S1
+S2 --1--> S0
+
+Accepts: 01, 001, 101, 0101...</code></pre>
+                    </div>
+                    <h2 id="regex">Regular Expressions</h2>
+                    <table>
+                        <tr><th>Symbol</th><th>Meaning</th><th>Example</th></tr>
+                        <tr><td>*</td><td>Zero or more</td><td>a* = ε, a, aa, aaa...</td></tr>
+                        <tr><td>+</td><td>One or more</td><td>a+ = a, aa, aaa...</td></tr>
+                        <tr><td>?</td><td>Zero or one</td><td>a? = ε or a</td></tr>
+                        <tr><td>|</td><td>Or</td><td>a|b = a or b</td></tr>
+                        <tr><td>()</td><td>Grouping</td><td>(ab)* = ε, ab, abab...</td></tr>
+                    </table>
+                    <pre><code>Pattern: a(b|c)*d
+Matches: ad, abd, acd, abbd, abcd, accd...
+
+Pattern: (01)*
+Matches: ε, 01, 0101, 010101...
+
+Pattern: 1*01*01*
+Matches: strings with exactly two 0s</code></pre>
+                    <h2 id="equivalence">FSA and Regex Equivalence</h2>
+                    <p>Every regex has an equivalent FSA and vice versa.</p>
+                    <div class="info-box tip">
+                        <div class="info-box-title"><span class="material-icons">lightbulb</span> Conversion Tip</div>
+                        <p>To convert FSA→Regex: Identify what patterns lead to accept states.</p>
+                    </div>
+                    <h2 id="practice">Practice</h2>
+                    <ol>
+                        <li>Write a regex for binary strings with even length</li>
+                        <li>Does the regex (a|b)*abb accept "aabb"?</li>
+                        <li>How many states minimum for strings divisible by 3?</li>
+                    </ol>
+                \`
+            },
+            'graph-theory': {
+                title: 'Graph Theory',
+                subtitle: 'Navigate vertices, edges, and graph algorithms',
+                sections: [
+                    { id: 'intro', title: 'Introduction' },
+                    { id: 'terminology', title: 'Terminology' },
+                    { id: 'representations', title: 'Representations' },
+                    { id: 'paths', title: 'Paths & Cycles' },
+                    { id: 'algorithms', title: 'Algorithms' },
+                    { id: 'practice', title: 'Practice' }
+                ],
+                content: \`
+                    <h2 id="intro">Graph Theory</h2>
+                    <p>A graph G = (V, E) consists of vertices (nodes) and edges (connections).</p>
+                    <h2 id="terminology">Key Terminology</h2>
+                    <table>
+                        <tr><th>Term</th><th>Definition</th></tr>
+                        <tr><td>Vertex (Node)</td><td>A point in the graph</td></tr>
+                        <tr><td>Edge</td><td>Connection between two vertices</td></tr>
+                        <tr><td>Degree</td><td>Number of edges connected to a vertex</td></tr>
+                        <tr><td>Path</td><td>Sequence of vertices connected by edges</td></tr>
+                        <tr><td>Cycle</td><td>Path that starts and ends at same vertex</td></tr>
+                        <tr><td>Connected</td><td>Path exists between any two vertices</td></tr>
+                    </table>
+                    <h2 id="representations">Graph Representations</h2>
+                    <h3>Adjacency Matrix</h3>
+                    <pre><code>    A B C D
+A [ 0 1 1 0 ]
+B [ 1 0 1 1 ]
+C [ 1 1 0 0 ]
+D [ 0 1 0 0 ]
+
+1 = edge exists, 0 = no edge</code></pre>
+                    <h3>Adjacency List</h3>
+                    <pre><code>A: [B, C]
+B: [A, C, D]
+C: [A, B]
+D: [B]</code></pre>
+                    <h2 id="paths">Paths, Cycles & Trees</h2>
+                    <div class="info-box">
+                        <div class="info-box-title"><span class="material-icons">account_tree</span> Tree Properties</div>
+                        <p>A tree with n vertices has exactly n-1 edges.</p>
+                        <p>A tree is a connected graph with no cycles.</p>
+                    </div>
+                    <pre><code>Euler Path: Uses every EDGE exactly once
+  Exists if: 0 or 2 vertices have odd degree
+
+Euler Circuit: Euler path that returns to start
+  Exists if: All vertices have even degree
+
+Hamilton Path: Visits every VERTEX exactly once
+Hamilton Circuit: Hamilton path returning to start</code></pre>
+                    <h2 id="algorithms">Graph Algorithms</h2>
+                    <h3>Sum of Degrees Theorem</h3>
+                    <p>Sum of all degrees = 2 × number of edges</p>
+                    <h3>Shortest Path</h3>
+                    <p>BFS finds shortest path in unweighted graphs.</p>
+                    <h2 id="practice">Practice</h2>
+                    <ol>
+                        <li>A graph has 6 vertices and 8 edges. What's the sum of degrees?</li>
+                        <li>Can a graph with degrees 3,3,3,3,2 have an Euler circuit?</li>
+                        <li>How many edges in a complete graph K₅?</li>
+                    </ol>
+                \`
+            },
+            'digital-electronics': {
+                title: 'Digital Electronics',
+                subtitle: 'Design circuits with logic gates',
+                sections: [
+                    { id: 'intro', title: 'Introduction' },
+                    { id: 'gates', title: 'Logic Gates' },
+                    { id: 'circuits', title: 'Circuit Analysis' },
+                    { id: 'truth-tables', title: 'Truth Tables' },
+                    { id: 'kmaps', title: 'Karnaugh Maps' },
+                    { id: 'practice', title: 'Practice' }
+                ],
+                content: \`
+                    <h2 id="intro">Digital Electronics</h2>
+                    <p>Digital circuits use logic gates to process binary signals.</p>
+                    <h2 id="gates">Logic Gates</h2>
+                    <table>
+                        <tr><th>Gate</th><th>Symbol</th><th>Output</th></tr>
+                        <tr><td>AND</td><td>D-shape</td><td>1 only if all inputs are 1</td></tr>
+                        <tr><td>OR</td><td>Curved back</td><td>1 if any input is 1</td></tr>
+                        <tr><td>NOT</td><td>Triangle + bubble</td><td>Inverts input</td></tr>
+                        <tr><td>NAND</td><td>AND + bubble</td><td>NOT of AND</td></tr>
+                        <tr><td>NOR</td><td>OR + bubble</td><td>NOT of OR</td></tr>
+                        <tr><td>XOR</td><td>OR + curved line</td><td>1 if inputs differ</td></tr>
+                    </table>
+                    <div class="info-box tip">
+                        <div class="info-box-title"><span class="material-icons">electric_bolt</span> Universal Gates</div>
+                        <p>NAND and NOR are universal — any circuit can be built using only NAND (or only NOR) gates.</p>
+                    </div>
+                    <h2 id="circuits">Circuit Analysis</h2>
+                    <pre><code>A ─┬─[AND]─┐
+   │       ├─[OR]── Output
+B ─┴─[AND]─┘
+   │
+C ─┘
+
+Expression: (A AND B) OR (B AND C)</code></pre>
+                    <h2 id="truth-tables">Truth Tables</h2>
+                    <p>List all input combinations and their outputs:</p>
+                    <pre><code>A B | A AND B | A OR B | A XOR B
+0 0 |    0    |   0    |    0
+0 1 |    0    |   1    |    1
+1 0 |    0    |   1    |    1
+1 1 |    1    |   1    |    0</code></pre>
+                    <h2 id="kmaps">Karnaugh Maps (K-Maps)</h2>
+                    <p>Visual method to simplify Boolean expressions.</p>
+                    <pre><code>2-variable K-Map for F(A,B):
+        B=0  B=1
+A=0  |  0  |  1  |
+A=1  |  1  |  1  |
+
+Group the 1s: F = B + A (simplified)</code></pre>
+                    <div class="info-box">
+                        <div class="info-box-title"><span class="material-icons">grid_on</span> K-Map Rules</div>
+                        <p>1. Group adjacent 1s in powers of 2 (1, 2, 4, 8...)</p>
+                        <p>2. Groups can wrap around edges</p>
+                        <p>3. Make groups as large as possible</p>
+                    </div>
+                    <h2 id="practice">Practice</h2>
+                    <ol>
+                        <li>Build a circuit for: (A XOR B) AND C</li>
+                        <li>How many rows in a truth table with 4 inputs?</li>
+                        <li>Simplify using K-map: F(A,B) = A'B + AB + AB'</li>
+                    </ol>
+                \`
+            },
+            'assembly': {
+                title: 'Assembly Language',
+                subtitle: 'Program at the machine level',
+                sections: [
+                    { id: 'intro', title: 'Introduction' },
+                    { id: 'registers', title: 'Registers' },
+                    { id: 'instructions', title: 'Instructions' },
+                    { id: 'addressing', title: 'Addressing Modes' },
+                    { id: 'tracing', title: 'Tracing Programs' },
+                    { id: 'practice', title: 'Practice' }
+                ],
+                content: \`
+                    <h2 id="intro">Assembly Language</h2>
+                    <p>Assembly is a low-level language with direct hardware access. ACSL uses a simplified model.</p>
+                    <h2 id="registers">Registers</h2>
+                    <p>Small, fast storage locations in the CPU:</p>
+                    <pre><code>ACC - Accumulator (main working register)
+A, B, C... - General purpose registers
+PC - Program Counter (next instruction address)</code></pre>
+                    <h2 id="instructions">Common Instructions</h2>
+                    <table>
+                        <tr><th>Instruction</th><th>Meaning</th><th>Example</th></tr>
+                        <tr><td>LOAD x</td><td>ACC ← value at x</td><td>LOAD 100</td></tr>
+                        <tr><td>STORE x</td><td>Memory[x] ← ACC</td><td>STORE 200</td></tr>
+                        <tr><td>ADD x</td><td>ACC ← ACC + value at x</td><td>ADD 100</td></tr>
+                        <tr><td>SUB x</td><td>ACC ← ACC - value at x</td><td>SUB 100</td></tr>
+                        <tr><td>MULT x</td><td>ACC ← ACC * value at x</td><td>MULT 100</td></tr>
+                        <tr><td>DIV x</td><td>ACC ← ACC / value at x</td><td>DIV 100</td></tr>
+                        <tr><td>BEQ label</td><td>Branch if ACC = 0</td><td>BEQ DONE</td></tr>
+                        <tr><td>BNE label</td><td>Branch if ACC ≠ 0</td><td>BNE LOOP</td></tr>
+                        <tr><td>BG label</td><td>Branch if ACC > 0</td><td>BG POSITIVE</td></tr>
+                        <tr><td>END</td><td>Stop execution</td><td>END</td></tr>
+                    </table>
+                    <h2 id="addressing">Addressing Modes</h2>
+                    <pre><code>Immediate:   LOAD =5     ; ACC ← 5 (literal value)
+Direct:      LOAD 100    ; ACC ← Memory[100]
+Indirect:    LOAD @100   ; ACC ← Memory[Memory[100]]</code></pre>
+                    <div class="info-box example">
+                        <div class="info-box-title"><span class="material-icons">edit</span> Example</div>
+                        <pre><code>Memory: [100]=50, [50]=999
+
+LOAD 100   ; ACC = 50 (value at address 100)
+LOAD =100  ; ACC = 100 (literal 100)
+LOAD @100  ; ACC = 999 (value at address 50)</code></pre>
+                    </div>
+                    <h2 id="tracing">Tracing Example</h2>
+                    <pre><code>LOC  INSTRUCTION
+10   LOAD =5
+11   STORE 100
+12   LOAD =3
+13   ADD 100
+14   STORE 101
+15   END
+
+Trace:
+10: ACC = 5
+11: Memory[100] = 5
+12: ACC = 3
+13: ACC = 3 + 5 = 8
+14: Memory[101] = 8
+15: Stop
+
+Final: Memory[100]=5, Memory[101]=8</code></pre>
+                    <h2 id="practice">Practice</h2>
+                    <ol>
+                        <li>What's in ACC after: LOAD =10, ADD =5, MULT =2?</li>
+                        <li>If Memory[200]=50, Memory[50]=7, what is LOAD @200?</li>
+                        <li>Write code to compute Memory[100] + Memory[101] × 2</li>
+                    </ol>
+                \`
             }
         };
 
